@@ -1,0 +1,20 @@
+@mixin media-tablet {
+    @media (max-width: $tablet-width) { @content; }
+}
+
+@mixin media-mobile {
+    @media (max-width: $mobile-width) { @content; }
+}
+
+// @mixin font ($size, $weight: 400, $line-height: $size) {
+//     font-size: $size;
+//     line-height: $line-height;
+// }
+
+// .logo__text{
+//     font-family: 'Arial', Helvetica, sans-serif;
+//     font-weight: 400;
+//     font-size: 13px;
+//     line-height: 14.95px;
+//     color: $text-grey;
+// }
