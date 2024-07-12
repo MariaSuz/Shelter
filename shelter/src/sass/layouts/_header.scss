@@ -1,5 +1,6 @@
 .header {
     width: 100%;
+    color: $text-light;
 }
 
 .header__logo-navigation {
@@ -18,33 +19,16 @@
     gap: 20px;
 }
 
-.logo__title {
-    font-family: 'Georgia', 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 35.2px;
-    color: $button-border;
-}
-
 .logo__text{
     font-family: 'Arial', Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 14.95px;
+    @include font(13px, 14.95px);
     color: $text-grey;
+    letter-spacing: 1.5px;
 }
 
 .navigation__link{
     list-style: none;
-    font-family: 'Arial', Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
-    color: $text-light;
 }
-
-
-
 
 // Вторая часть
 .start-screen{
@@ -59,35 +43,5 @@
     gap: 40px;
 }
 
-.start-screen__title{
-    font-family: 'Georgia', 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 44px;
-    line-height: 57.2px;
-    color: $text-grey;
-}
 
-.start-screen__text{
-    font-family: 'Arial', Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
-    color:$text-light;
-}
-
-.button{
-    display: inline-block;
-    text-decoration: none;
-    width: 207px;
-    height: 52px;
-    background-color: $button-border;
-    font-family: 'Georgia', 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 22.1px;
-    color: rgba(41, 41, 41, 1);
-    border-radius: 100px;
-    padding: 15px, 45px, 15px, 45px;
-
-}
 
