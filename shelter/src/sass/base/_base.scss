@@ -3,6 +3,11 @@
     padding: 0;
   }
 
+// Плавная прокрутка по якорям! ниже
+  html {
+    scroll-behavior: smooth;
+    }
+
   body {
     width: 100%;
     @extend %font-prim;
@@ -62,6 +67,9 @@
       padding: 15px, 45px, 15px, 45px;
       width: 261px;
       letter-spacing: 1px;
+    }
+    &_start-screen{
+      letter-spacing: 0.06em;
     }
     &:hover {
       background-color: $button-hover;
