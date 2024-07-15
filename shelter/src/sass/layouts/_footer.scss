@@ -1,0 +1,41 @@
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.footer_link{
+    text-decoration: none;
+    color:$button-primary;
+    @extend %font-second;
+    @include font(20px, 23px);
+    letter-spacing: 0.06em;
+}
+
+.footer__contacts__container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 40px;
+}
+
+.footer__location__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 34px;
+}
+
+.footer__contacts{
+ display: flex;
+ gap: 20px;
+}
+
+.footer__location{
+    display: flex;
+    gap: 20px;
+}
+
+.footer__contacts_h3{
+    color:$text-grey;
+}

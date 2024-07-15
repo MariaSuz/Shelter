@@ -5,6 +5,7 @@
     padding-bottom: 100px;
     align-items: center;
     gap: 60px;
+    position: relative;
 }
 
 .pets__h3 {
@@ -59,9 +60,64 @@
 
 
 
-
-
+//Модальное окно!
 
 .pets__modal {
     display: none;
+    position: fixed;
+    background-color:rgba(41, 41, 41, 0.6);
+    left: 50%;
+    top: 50%;
+
 }
+
+.modal__window {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    max-height: 500px;
+    background-color:$text-grey;
+}
+
+.modal__window__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal__text{
+    @extend %font-second;
+    @include font(15px, 16.5px);
+    max-width: 350px;
+}
+
+.modal__window__img{
+    width: 500px;
+    height: 500px;
+}
+
+.modal__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.modal__li {
+    color: $button-primary;
+}
+
+
+.modal__span {
+    @extend %font-second;
+    @include font(15px, 16.5px);
+    color: rgba(0, 0, 0, 1);
+}
+
+//Модальный крестик
+
+.modal__close-button{
+    border: 2px solid$button-primary;
+    width: 52px;
+    height: 52px;
+    border-radius: 100px;
+}
+
