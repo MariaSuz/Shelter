@@ -1,3 +1,8 @@
+.wrapper-box_header{
+    background: url('/mariasuz-JSFEPRESCHOOL2024Q2/shelter/src/img/noise_lines_transparent.png'),
+    radial-gradient(110.67% 338.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
+}
+
 .wrapper {
     width: 100%;
     max-width: $content-width;
@@ -9,9 +14,9 @@
 
 .header__wrapper {
     // background-image: url('../../img/start-screen-background.jpg');
-    background-image: 
-    linear-gradient(150deg, rgba(91, 72, 58, 0.4), rgba(38, 36, 37, 0.1)),
-    url('/mariasuz-JSFEPRESCHOOL2024Q2/shelter/src/img/start-screen-background.jpg');
+    // background-image: 
+    // linear-gradient(150deg, rgba(91, 72, 58, 0.4), rgba(38, 36, 37, 0.1)),
+    // url('/mariasuz-JSFEPRESCHOOL2024Q2/shelter/src/img/start-screen-background.jpg');
     height: 908px;
 }
 
@@ -35,13 +40,33 @@
 
 .donation__wrapper{
     padding-top: 80px;
-    padding-bottom: 100px;
+    padding-bottom: 97px;
     background-color: $background-color-pets;
 }
 
 .footer__wrapper{
     padding-top: 40px;
-    background-image: 
-    linear-gradient(150deg, rgba(91, 72, 58, 0.4), rgba(38, 36, 37, 0.1)),
-    url('/mariasuz-JSFEPRESCHOOL2024Q2/shelter/src/img/start-screen-background.jpg');
+}
+
+
+///Здесь фон на весь экран
+///
+.about{
+    background-color: $text-grey;
+}
+
+.pets{
+    background-color: $background-color-pets;
+}
+
+.help{
+    background-color: $text-grey;
+}
+
+.donation{
+    background-color: $background-color-pets;
+}
+
+.footer{
+    background: url('/mariasuz-JSFEPRESCHOOL2024Q2/shelter/src/img/noise_lines_transparent.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
 }

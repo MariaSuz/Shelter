@@ -32,6 +32,11 @@
     background-color: $background-color-pets-card;
     max-width: 270px;
     max-height: 435px;
+    transition: transform .2s;
+    position: relative;
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .button_arrow{

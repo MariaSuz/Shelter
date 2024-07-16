@@ -17,6 +17,9 @@
 
 .logo_a {
     text-decoration: none;
+    &:hover {
+        color: $button-hover;;
+    }
 }
 
 .navigation {

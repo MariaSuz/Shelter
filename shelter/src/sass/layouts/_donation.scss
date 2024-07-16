@@ -38,6 +38,11 @@
     height: 43px;
     border-radius: 9px;
     display: flex;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: $button-hover;
+        cursor: pointer;
+      }
   
 }
 
