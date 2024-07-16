@@ -22,6 +22,10 @@
     }
 }
 
+.logo__title_pets{
+    color:$text-dark-second;
+}
+
 .navigation {
     display: flex;
     gap: 36px;
@@ -33,6 +37,9 @@
     @include font(13px, 14.95px);
     color: $text-grey;
     letter-spacing: 1.5px;
+    &_pets {
+        color:$text-dark-second;
+    }
 }
 
 .navigation__link{
@@ -45,10 +52,13 @@
     text-decoration: none;
     transition: all 0.1s linear;
     padding-bottom: 3px;
-
     &:hover {
         border-bottom: 3px solid $button-primary;
     }
+}
+
+.navigation__link_pets {
+    color:$text-dark-second;
 }
 
 .activ-class-a{
