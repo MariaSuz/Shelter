@@ -206,6 +206,11 @@ h5 {
     height: 823px;
   }
 }
+@media (max-width: 514px) and (min-width: 320px) {
+  .header__wrapper {
+    height: 823px;
+  }
+}
 
 .wrapper__about {
   display: flex;
@@ -493,7 +498,7 @@ h5 {
 .img-start-screen {
   max-width: 100%;
   object-fit: contain;
-  position: relative;
+  position: sticky;
 }
 @media (max-width: 768px) {
   .img-start-screen {

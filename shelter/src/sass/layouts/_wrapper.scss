@@ -45,6 +45,9 @@
     @include media-mobile {
         height: 823px;
     }
+    @include tablet-mobile {
+        height: 823px;
+    }
 }
 
 .wrapper__about{

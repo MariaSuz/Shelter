@@ -156,7 +156,7 @@
 .img-start-screen{
     max-width: 100%;
     object-fit: contain;
-    position: relative;
+    position: sticky;
     @include media-tablet{
         max-width: 81%;
         left: 70px;
@@ -165,5 +165,6 @@
         left: 20px;
         max-width: 88%;
     }
+    
 }
 
