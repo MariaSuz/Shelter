@@ -2,11 +2,21 @@
     height: 120px;
 }
 
+.burger-line_friends{
+    border: solid 1px rgba(0, 0, 0, 1);
+}
+
 .friends__contants{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
+    @include media-tablet{
+        gap: 30px;
+    }
+    @include media-mobile{
+        gap: 40px;
+    }
 }
 
 .friends__contants__text{
@@ -17,11 +27,25 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px 40px;
+    justify-content: center;
+    @include media-tablet{
+        max-height: 1365px;
+        overflow: hidden;
+    }
 }
 
 .friends__contants__navigation{
     display: flex;
     gap: 20px;
+    @include media-tablet{
+        padding-top: 5px;
+    }
+    @include media-mobile{
+        gap: 10px;
+    }
+    @include tablet-mobile{
+        gap: 10px;
+    }
 }
 
 
@@ -50,4 +74,14 @@
         border: 2px solid $text-light;
         color:$text-light;
     }
+}
+
+.footer__container_friends{
+    @include media-mobile{
+        margin-top: -5px;
+    }
+}
+
+.footer__location__container_friends{
+    gap: 42px;
 }

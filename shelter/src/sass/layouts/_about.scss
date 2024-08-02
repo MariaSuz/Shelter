@@ -1,5 +1,11 @@
 .about__img {
     display: block;
+    @include tablet-mobile{
+       width: 98%;
+    }
+    @include media-mobile{
+        width: 86%;
+     }
 }
 
 .content {
@@ -8,4 +14,24 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+    @include media-mobile {
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
+
+.p__about{
+    @extend %font-prim;
+    @include font(15px, 24px);
+    @include media-mobile{
+        text-align: justify;
+    }
+}
+
+.p__about_3px{
+    @include media-mobile{
+        margin-top: -3px;
+    }
+}
+

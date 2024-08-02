@@ -6,13 +6,14 @@
 // Плавная прокрутка по якорям! ниже
   html {
     scroll-behavior: smooth;
-    }
+    } 
 
   body {
     width: 100%;
     @extend %font-prim;
     @include font(15px, 24px);
     color: $text-dark;
+    min-width: 320px;
   }
 
   h1{
@@ -26,18 +27,35 @@
     @extend %font-second;
     @include font(44px, 57.2px);
     color: $text-grey;
+    @include tablet-mobile {
+      @include font(25px, 32.5px);
+    }
+    @include media-mobile {
+      @include font(25px, 32.5px);
+      letter-spacing: 0.06em;
+    }
   }
 
   h3 {
     @extend %font-second;
     @include font(35px, 45.5px);
     letter-spacing: 2px;
+    @include tablet-mobile {
+      @include font(25px, 32.5px);
+    }
+    @include media-mobile {
+      @include font(25px, 32.5px);
+      letter-spacing: 0.06em;
+    }
   }
 
   h4 {
     @extend %font-second;
     @include font(20px, 23px);
     letter-spacing:  0.06em;
+    @include media-mobile {
+      @include font(15px, 16.5px);
+    }
   }
 
   h5 {
@@ -56,7 +74,7 @@
     color: rgba(41, 41, 41, 1);
     border-radius: 100px;
     padding: 15px, 45px, 15px, 45px;
-    transition: all 0.3s ease;
+    @extend %transition;
     &_card {
       background-color:rgba(250, 250, 250, 0);
       border: solid 2px $button-primary;
@@ -68,20 +86,28 @@
       padding: 15px, 45px, 15px, 45px;
       width: 261px;
       letter-spacing: 1px;
+      border-style: none;
     }
     &_start-screen{
       letter-spacing: 0.06em;
+      @include media-tablet{
+        margin: auto;
+      }
+      @include media-mobile{
+        text-align: center;
+        margin-top: 5px;
+      }
     }
     &:hover {
       background-color: $button-hover;
       cursor: pointer;
-      transition: all 0.3s ease;
+      @extend %transition;
     }
 }
 
 
-
-
-
+.img {
+  max-width: 100%;
+}
 
 

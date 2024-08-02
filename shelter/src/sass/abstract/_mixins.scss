@@ -11,3 +11,24 @@
     line-height: $line-height;
     font-weight: $weight;
 }
+
+
+@mixin pc-tablet {
+    @media (max-width: 1124px) and (min-width: 768px) { @content; }
+}
+
+@mixin slider1212 {
+    @media (max-width: 1212px) { @content; }
+}
+
+@mixin donationsize {
+    @media (max-width: 906px) { @content; }
+}
+
+@mixin tablet-mobile {
+    @media (max-width: 514px) and (min-width: 320px) { @content; }
+}
+
+@mixin navigationsize {
+    @media (max-width: 767px){ @content; }
+}
