@@ -189,26 +189,26 @@ h5 {
 }
 
 .header__wrapper {
-  height: 908px;
+  max-height: 908px;
 }
 @media (max-width: 768px) {
   .header__wrapper {
-    height: 1165px;
+    max-height: 1165px;
   }
 }
 @media (max-width: 1124px) and (min-width: 768px) {
   .header__wrapper {
-    height: 1165px;
+    max-height: 1165px;
   }
 }
 @media (max-width: 320px) {
   .header__wrapper {
-    height: 823px;
+    max-height: 823px;
   }
 }
 @media (max-width: 514px) and (min-width: 320px) {
   .header__wrapper {
-    height: 823px;
+    max-height: 823px;
   }
 }
 
@@ -499,6 +499,7 @@ h5 {
   max-width: 100%;
   object-fit: contain;
   position: sticky;
+  align-self: flex-end;
 }
 @media (max-width: 768px) {
   .img-start-screen {
