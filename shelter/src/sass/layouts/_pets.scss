@@ -86,11 +86,8 @@
         box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
         transform: scale(0.98);
         @extend %transition;
-        &.button_card{
+        & .button_card{
             background-color: $button-hover;
-        }
-        &.slider__card__text{
-            font-weight: 700;
         }
     }
 }

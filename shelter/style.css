@@ -678,10 +678,10 @@ h5 {
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
   transform: scale(0.98);
 }
-.slider__card:hover.button_card {
+.slider__card:hover .button_card {
   background-color: rgb(253, 220, 196);
 }
-.slider__card:hover.slider__card__text {
+.slider__card:hover .slider__card__text {
   font-weight: 700;
 }
 
