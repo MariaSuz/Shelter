@@ -156,15 +156,17 @@
 .img-start-screen{
     max-width: 100%;
     object-fit: contain;
-    position: sticky;
     align-self: flex-end;
+    @include pc-tablet {
+        max-height: 593px;
+    }
     @include media-tablet{
-        max-width: 81%;
+        max-height: 593px;
         left: 70px;
     }
     @include tablet-mobile {
         left: 20px;
-        max-width: 88%;
+        max-height: 271px;
     }
     
 }

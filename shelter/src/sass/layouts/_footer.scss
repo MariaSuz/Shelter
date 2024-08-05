@@ -11,6 +11,11 @@
         justify-content: center;
         gap: 60px 60px;
     }
+    @include tablet-mobile{
+        align-items: center;
+        gap: 28px 10px;
+        text-align: center;
+    }
     @include media-mobile{
         align-items: center;
         gap: 28px 10px;
@@ -98,8 +103,20 @@
 }
 
 .footer__img{
+    @include media-tablet{
+        max-width: 320px;
+        padding-top: 10px;
+    }
+    @include pc-tablet{
+        max-width: 320px;
+        padding-top: 10px;
+    }
+    @include tablet-mobile {
+        max-width: 260px;
+        padding-top: 10px;
+    }
     @include media-mobile{
-        width: 87%;
+        max-width: 260px;
         padding-top: 10px;
     }
 }
