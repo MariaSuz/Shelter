@@ -6,7 +6,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.slider__card:hover, .slider__card, .button:hover, .button {
+.slider__card:hover, .slider__card, .slider__container, .button:hover, .button {
   transition: all 0.3s ease;
 }
 
@@ -26,6 +26,12 @@ body {
   font-weight: 400;
   color: rgb(76, 76, 76);
   min-width: 320px;
+}
+
+body.noscroll {
+  overflow: hidden;
+  background-color: rgb(41, 41, 41);
+  opacity: 0.7;
 }
 
 h1 {
@@ -339,6 +345,7 @@ h5 {
   display: flex;
   padding-top: 30px;
   justify-content: space-between;
+  position: relative;
 }
 @media (max-width: 767px) {
   .header__logo-navigation {
@@ -371,15 +378,41 @@ h5 {
   color: rgb(84, 84, 84);
 }
 
+@media (max-width: 767px) {
+  .menu {
+    background-color: rgb(41, 41, 41);
+    width: 320px;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    z-index: 20;
+    transition: all 0.3s ease;
+    opacity: 1;
+    position: fixed;
+  }
+}
+
+.menu.open {
+  right: 0;
+  position: fixed;
+}
+
+@media (max-width: 767px) {
+  .navigation-menu {
+    padding-top: 248px;
+  }
+}
+
 .navigation {
   display: flex;
   gap: 36px;
   padding-top: 15px;
 }
-
 @media (max-width: 767px) {
-  .navigation-menu {
-    display: none;
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
   }
 }
 
@@ -389,17 +422,23 @@ h5 {
 @media (max-width: 767px) {
   .burger-button {
     display: block;
-    z-index: 5;
-    position: relative;
+    display: inline-block;
+    position: fixed;
     width: 30px;
     height: 22px;
     transition: all 0.3s ease;
-    cursor: pointer;
     background: none;
     border: 0;
     display: flex;
     flex-direction: column;
     gap: 9px;
+    z-index: 30;
+    top: 3.0625rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  .burger-button_active {
+    transform: rotate(90deg);
   }
 }
 
@@ -602,6 +641,7 @@ h5 {
   align-items: center;
   gap: 53px;
   overflow: hidden;
+  border: 2px solid black;
   width: 100%;
 }
 @media (max-width: 1124px) and (min-width: 768px) {
@@ -666,8 +706,8 @@ h5 {
   gap: 30px;
   border-radius: 9px;
   background-color: rgb(250, 250, 250);
-  max-width: 270px;
-  max-height: 445px;
+  width: 270px;
+  height: 445px;
   transition: transform 0.2s;
   position: relative;
   order: 1;
@@ -713,13 +753,13 @@ h5 {
 }
 
 @media (max-width: 320px) {
-  .button_arrow_righ {
-    order: 3;
+  .button_arrow_right {
+    order: 2;
   }
 }
 @media (max-width: 514px) and (min-width: 320px) {
-  .button_arrow_righ {
-    order: 3;
+  .button_arrow_right {
+    order: 2;
   }
 }
 

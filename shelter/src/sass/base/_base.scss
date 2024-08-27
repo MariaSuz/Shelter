@@ -16,6 +16,12 @@
     min-width: 320px;
   }
 
+  body.noscroll{
+    overflow: hidden;
+    background-color: $burger-background;
+    opacity: 0.7;
+  }
+
   h1{
     @extend %font-second;
     @include font(32px, 35.2px);
