@@ -153,9 +153,20 @@
     display: none;
     position: fixed;
     background-color:rgba(41, 41, 41, 0.6);
-    left: 50%;
-    top: 50%;
+    left:0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    @extend %transition;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+}
 
+.modal__container{
+    position: relative;
 }
 
 .modal__window {
@@ -163,30 +174,94 @@
     justify-content: space-between;
     max-width: 900px;
     max-height: 500px;
-    background-color:$text-grey;
+    background-color: $background-color-pets-card;
+    border-radius: 9px;
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+    @include pc-tablet{
+        max-width: 630px;
+        height: 350px;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    @include media-tablet {
+        max-width: 630px;
+        max-height: 350px;
+    }
+    @include navigationsize {
+        align-items: center;
+        justify-content: center;
+        max-width: 240px;
+        padding: 10px;
+    }
+}
+
+.h4_modal{
+    margin-top: -30px;
+    @include pc-tablet{
+        margin-top: -10px;
+    }
+    @include media-tablet {
+        margin-top: -10px;
+    }
 }
 
 .modal__window__container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
+    @include pc-tablet{
+        gap: 20px;
+    }
+    @include media-tablet {
+        gap: 20px;
+    }
 }
 
 .modal__text{
     @extend %font-second;
     @include font(15px, 16.5px);
-    max-width: 350px;
+    letter-spacing: 0.06em;
+    @include pc-tablet{
+        @include font(13px, 14.3px);
+    }
+    @include media-tablet {
+        @include font(13px, 14.3px);
+    }
+    @include media-mobile {
+        @include font(13px, 14.3px);
+    }
+    @include navigationsize {
+        text-align: justify;
+    }
 }
 
 .modal__window__img{
     width: 500px;
     height: 500px;
+    @include pc-tablet{
+        width: 350px;
+        height: 350px;
+    }
+    @include media-tablet {
+        width: 350px;
+        height: 350px;
+    }
+    @include navigationsize {
+        display: none;
+    }
 }
 
 .modal__ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-left: 15px;
+    @include navigationsize {
+        gap: 0;
+    }
 }
 .modal__li {
     color: $button-primary;
@@ -202,16 +277,44 @@
 //Модальный крестик
 
 .modal__close-button{
-    border: 2px solid$button-primary;
+    border: 2px solid $button-primary;
     width: 52px;
     height: 52px;
     border-radius: 100px;
-}
-
-
-//Прячу блок
-.hide-mobile {
-    @include media-tablet {
-        display: none;
+    position: absolute;
+    top: -52px;
+    right: -52px;
+    background: transparent;
+    &:hover {
+        background-color: $button-hover;
     }
 }
+
+// .modal__close-button:before, .modal__close-button:after {
+//     position: absolute;
+//     left: 20px;
+//     content: ' ';
+//     height: 12px;
+//     width: 12px;
+//     background-color: #333;
+//   } 
+
+//   .modal__close-button:before {
+//     transform: rotate(45deg);
+//   }
+//   .modal__close-button:after {
+//     transform: rotate(-45deg);
+//   }
+
+// .modal__close-button_span{
+//     border: solid 2px $burger-background;
+//     width: 100%;
+// }
+
+.modal__close-button_span::after{
+    display: inline-block;
+    content: "\00d7";
+    font-size: 32px;
+    font-weight: lighter;
+}
+

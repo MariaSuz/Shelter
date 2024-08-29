@@ -24,6 +24,9 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @include media-mobile{
+        margin-left: -90px;
+    }
 }
 
 .logo_a {
@@ -48,6 +51,7 @@
         transition: all 0.3s ease;
         opacity: 1;
         position: fixed;
+        overflow: auto;
     }
 }
 
@@ -80,7 +84,7 @@
     @include navigationsize {
         display: block;
         display: inline-block;
-        position: fixed;
+        position: absolute;
         width: 30px;
         height: 22px;
         transition: all 0.3s ease;

@@ -27,13 +27,13 @@ links.forEach((link) => {
   }
 
 
-  //прячу меню при клике вне меню
-document.addEventListener('click', (e) =>
-{ // проверяем, что элемент на который кликнули (e.target) не находится в блоке .burger-wrap
-    if (!menu.contains(e.target)) {
-        menu.classList.remove('open');
-        body.classList.remove('noscroll');
-        burgerButton.classList.remove('burger-button_active');
-    }
-})
+//   //прячу меню при клике вне меню
+// document.addEventListener('click', (e) =>
+// { // проверяем, что элемент на который кликнули (e.target) не находится в блоке .burger-wrap
+//     if (!menu.contains(e.target)) {
+//         menu.classList.remove('open');
+//         body.classList.remove('noscroll');
+//         burgerButton.classList.remove('burger-button_active');
+//     }
+// })
 

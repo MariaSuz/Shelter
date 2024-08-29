@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .p__about, .button, body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -6,7 +7,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.slider__card:hover, .slider__card, .slider__container, .button:hover, .button {
+.pets__modal, .slider__card:hover, .slider__card, .slider__container, .button:hover, .button {
   transition: all 0.3s ease;
 }
 
@@ -366,6 +367,11 @@ h5 {
   flex-direction: column;
   gap: 10px;
 }
+@media (max-width: 320px) {
+  .logo {
+    margin-left: -90px;
+  }
+}
 
 .logo_a {
   text-decoration: none;
@@ -389,6 +395,7 @@ h5 {
     transition: all 0.3s ease;
     opacity: 1;
     position: fixed;
+    overflow: auto;
   }
 }
 
@@ -423,7 +430,7 @@ h5 {
   .burger-button {
     display: block;
     display: inline-block;
-    position: fixed;
+    position: absolute;
     width: 30px;
     height: 22px;
     transition: all 0.3s ease;
@@ -774,8 +781,16 @@ h5 {
   display: none;
   position: fixed;
   background-color: rgba(41, 41, 41, 0.6);
-  left: 50%;
-  top: 50%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.modal__container {
+  position: relative;
 }
 
 .modal__window {
@@ -783,31 +798,131 @@ h5 {
   justify-content: space-between;
   max-width: 900px;
   max-height: 500px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(250, 250, 250);
+  border-radius: 9px;
+  padding-top: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+@media (max-width: 1124px) and (min-width: 768px) {
+  .modal__window {
+    max-width: 630px;
+    height: 350px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .modal__window {
+    max-width: 630px;
+    max-height: 350px;
+  }
+}
+@media (max-width: 767px) {
+  .modal__window {
+    align-items: center;
+    justify-content: center;
+    max-width: 240px;
+    padding: 10px;
+  }
+}
+
+.h4_modal {
+  margin-top: -30px;
+}
+@media (max-width: 1124px) and (min-width: 768px) {
+  .h4_modal {
+    margin-top: -10px;
+  }
+}
+@media (max-width: 768px) {
+  .h4_modal {
+    margin-top: -10px;
+  }
 }
 
 .modal__window__container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
+}
+@media (max-width: 1124px) and (min-width: 768px) {
+  .modal__window__container {
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .modal__window__container {
+    gap: 20px;
+  }
 }
 
 .modal__text {
   font-size: 15px;
   line-height: 16.5px;
   font-weight: 400;
-  max-width: 350px;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 1124px) and (min-width: 768px) {
+  .modal__text {
+    font-size: 13px;
+    line-height: 14.3px;
+    font-weight: 400;
+  }
+}
+@media (max-width: 768px) {
+  .modal__text {
+    font-size: 13px;
+    line-height: 14.3px;
+    font-weight: 400;
+  }
+}
+@media (max-width: 320px) {
+  .modal__text {
+    font-size: 13px;
+    line-height: 14.3px;
+    font-weight: 400;
+  }
+}
+@media (max-width: 767px) {
+  .modal__text {
+    text-align: justify;
+  }
 }
 
 .modal__window__img {
   width: 500px;
   height: 500px;
 }
+@media (max-width: 1124px) and (min-width: 768px) {
+  .modal__window__img {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media (max-width: 768px) {
+  .modal__window__img {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media (max-width: 767px) {
+  .modal__window__img {
+    display: none;
+  }
+}
 
 .modal__ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-left: 15px;
+}
+@media (max-width: 767px) {
+  .modal__ul {
+    gap: 0;
+  }
 }
 
 .modal__li {
@@ -826,12 +941,20 @@ h5 {
   width: 52px;
   height: 52px;
   border-radius: 100px;
+  position: absolute;
+  top: -52px;
+  right: -52px;
+  background: transparent;
+}
+.modal__close-button:hover {
+  background-color: rgb(253, 220, 196);
 }
 
-@media (max-width: 768px) {
-  .hide-mobile {
-    display: none;
-  }
+.modal__close-button_span::after {
+  display: inline-block;
+  content: "×";
+  font-size: 32px;
+  font-weight: lighter;
 }
 
 .help__container {
