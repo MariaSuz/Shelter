@@ -676,6 +676,11 @@ h5 {
   }
 }
 
+.slider__line {
+  max-width: 990px;
+  overflow: hidden;
+}
+
 .slider__container {
   display: flex;
   gap: 90px;
@@ -684,6 +689,10 @@ h5 {
   flex-wrap: wrap;
   box-sizing: border-box;
   overflow: hidden;
+  border: 2px solid red;
+  position: relative;
+  left: -100px;
+  transition: left 500ms linear;
 }
 @media (max-width: 768px) {
   .slider__container {

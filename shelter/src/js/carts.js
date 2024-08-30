@@ -35,7 +35,7 @@ const cartsItem = [
         'id' : 5,
         'name' : 'Scarlett',
         'animal' : 'Dog - Jack Russell Terrier',
-        'src' : 'src/img/pets-carlett.png',
+        'src' : 'src/img/pets-scarlet.png',
         'alt' : 'pets-scarlett',
         'description' : 'Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.',
     },
