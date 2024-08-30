@@ -9,9 +9,7 @@ function toggleBurger() {
     body.classList.toggle('noscroll');
 }
 
-
-burgerButton.addEventListener('click', toggleBurger);
-
+//burgerButton.addEventListener('click', toggleBurger);
 
 //При нажатии на ссылки, закрыть меню
 // Для каждого элемента меню при клике вызываем ф-ию
@@ -36,4 +34,14 @@ links.forEach((link) => {
 //         burgerButton.classList.remove('burger-button_active');
 //     }
 // })
+
+//прячу меню при клике вне меню исправлено
+document.addEventListener( 'click', (event) => {
+
+  if (!menu.contains(event.target) && event.target.classList.value != 'burger-line') {
+    closeOnClick();
+   } else if (event.target.classList.value == 'burger-line') {
+    toggleBurger();
+   }
+})
 
