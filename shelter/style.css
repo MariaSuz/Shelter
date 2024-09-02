@@ -7,7 +7,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.pets__modal, .slider__card:hover, .slider__card, .slider__container, .button:hover, .button {
+.pets__modal, .slider__card:hover, .slider__card, .slider__container, .slider__line, .button:hover, .button {
   transition: all 0.3s ease;
 }
 
@@ -648,7 +648,6 @@ h5 {
   align-items: center;
   gap: 53px;
   overflow: hidden;
-  border: 2px solid black;
   width: 100%;
 }
 @media (max-width: 1124px) and (min-width: 768px) {
@@ -679,6 +678,7 @@ h5 {
 .slider__line {
   max-width: 990px;
   overflow: hidden;
+  position: relative;
 }
 
 .slider__container {
@@ -688,11 +688,8 @@ h5 {
   max-height: 435px;
   flex-wrap: wrap;
   box-sizing: border-box;
-  overflow: hidden;
-  border: 2px solid red;
   position: relative;
-  left: -100px;
-  transition: left 500ms linear;
+  transition: top 500ms linear;
 }
 @media (max-width: 768px) {
   .slider__container {

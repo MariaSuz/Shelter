@@ -1,27 +1,40 @@
-const sliderline = document.querySelector('.slider__container');
+const sliderLine = document.querySelector('.slider__container');
 const buttonLeft =  document.querySelector('.button_arrow_left');
 const buttonRight =  document.querySelector('.button_arrow_right');
 
-let count = 0;
-let width;
-
-// function init() {
-//     width =  document.querySelector('.slider').offsetWidth;
-//     sliderline.style.width = width * 8 + 'px';
-// }
-
-// init();
+let sliderCount = 0,
+    sliderWidth = -52Н0;
 
 
-// // let position = 0;
-// // const nextSlide = () => {
-// //     position += 360;
-// //     sliderline.style.left = -position + 'px';
-// // }
+//Ширина ленты
+function showSlider (){
+    sliderLine.style.width = sliderWidth * 3 + 'px';
+    rollSlider();
+}
 
-// const nextSlide = () => {
-//     count++;
-//     sliderline.style.transform = 'translate(-'+count*width+'px)';
-// }
+//Вызываю её
+showSlider();
 
-// buttonRight.addEventListener('click', nextSlide);
+//Влево слайдер
+function nextslider () {
+    sliderCount ++;
+    if (sliderCount >= 3) sliderCount = 0;
+    rollSlider();
+}
+
+
+    // Вправо слайдер
+function prevslider ()  {
+    sliderCount --;
+    if (sliderCount < 0) sliderCount = 3 - 1;
+    rollSlider();
+}
+
+//Задает шаг слайдов
+function rollSlider () {
+    sliderLine.style.transform = `translateY(${sliderCount * sliderWidth}px)`;
+}
+
+//EVENT LISTENERS
+buttonRight.addEventListener('click', nextslider);
+buttonLeft.addEventListener('click', prevslider);
