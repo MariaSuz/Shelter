@@ -3,7 +3,7 @@ const buttonLeft =  document.querySelector('.button_arrow_left');
 const buttonRight =  document.querySelector('.button_arrow_right');
 
 let sliderCount = 0,
-    sliderWidth = -52Н0;
+    sliderWidth = -520;
 
 
 //Ширина ленты
