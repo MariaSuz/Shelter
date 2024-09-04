@@ -15,6 +15,11 @@
                     <a class="logo_a" href="index.html"><h1 class="logo__title logo__title_pets">Cozy House</h1></a>
                     <span class="logo__text logo__text_pets">Shelter for pets in Boston</span>
                 </div>
+                <button class="burger-button">
+                    <span class="burger-line_friends"></span>
+                    <span class="burger-line_friends"></span>
+                    <span class="burger-line_friends"></span>
+                </button>
                 <div class="menu">
                     <nav class="navigation-menu">
                         <ul class="navigation">
@@ -24,11 +29,6 @@
                             <li class="navigation__link navigation__link_pets"><a class="navigation__link_a navigation__link_pets" href="#contacts">Contacts</a></li>
                         </ul>
                     </nav>
-                    <button class="burger-button">
-                        <span class="burger-line"></span>
-                        <span class="burger-line"></span>
-                        <span class="burger-line"></span>
-                    </button>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                 <div class="friends__contants">
                     <h3 class="friends__contants__text">Our friends who <br>are looking for a house</h3>
                     <div class="friends__cards-container">
-                        <div class="slider__card">
+                        <!-- <div class="slider__card">
                             <img src="src/img/pets-katrine.png" alt="pets-katrine">
                             <span class="slider__card__text">Katrine</span>
                             <button class="button button_card">Learn more</button>
@@ -78,14 +78,14 @@
                             <img src="src/img/pets-freddie.png" alt="pets-freddie">
                             <span class="slider__card__text">Freddie</span>
                             <button class="button button_card">Learn more</button>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="friends__contants__navigation">
-                        <button disabled class="button-friends">&lt; &lt;</button>
-                        <button disabled class="button-friends">&lt;</button>
+                        <button class="button-friends" id="start">&lt; &lt;</button>
+                        <button class="button-friends" id="prevButton">&lt;</button>
                         <button class="button-friends button-friends_number">1</button>
-                        <button class="button-friends">&gt;</button>
-                        <button class="button-friends">&gt; &gt;</button>
+                        <button class="button-friends" id="nextButton">&gt;</button>
+                        <button class="button-friends" id="end">&gt; &gt;</button>
                     </div>
                 </div>
             </div>
@@ -134,6 +134,7 @@
             </div>
         </div>
     </footer>
-    <script src="src/js/burger.js"></script>
+    <script src="src/js/burger-friends.js"></script>
+    <script src="src/js/pagination.js"></script>
 </body>
 </html>

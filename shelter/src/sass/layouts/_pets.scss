@@ -48,21 +48,28 @@
 .slider__line{
     max-width: 990px;
     overflow: hidden;
-    position: relative;
+    max-height: 435px;
     @extend %transition;
+    @include media-tablet{
+        max-width: 580px;
+    }
+    @include media-mobile{
+        max-width: 270px;
+    }
 }
 
 .slider__container {
     display: flex;
     gap: 90px;
-    justify-content: space-around;
-    max-height: 435px;
-    flex-wrap: wrap;
-    box-sizing: border-box;
+    //justify-content: space-around;
+    //max-height: 435px;
+    //flex-wrap: wrap;
+    //box-sizing: border-box;
     position: relative;
     //top: -520px;
-    // left: -990px;
-    transition: top 500ms linear;
+    //left: -70%;
+    left: -1080px;
+    transition: left 500ms linear;
     @extend %transition;
 
     @include media-tablet{

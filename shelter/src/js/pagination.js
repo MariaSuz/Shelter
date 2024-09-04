@@ -65,8 +65,15 @@ const cartsItem = [
     }
 ]
 
-
-cartsItem.forEach( (res) => {
+//дублирую массив 6 раз
+// window.onload = function() {
+// let num = 6;
+// while(num > 0){
+// cartsItem = cartsItem.concat(array);
+// num--}
+// };
+function createCarts(arr) {
+arr.forEach( (res) => {
     let sliderCard = document.createElement('div');
     sliderCard.id = res.id;
     sliderCard.classList.add('slider__card');
@@ -87,7 +94,74 @@ cartsItem.forEach( (res) => {
     buttonCard.classList.add('button_card');
     sliderCard.appendChild(buttonCard);
 
-    let cards = document.querySelector('.slider__container');
+    let cards = document.querySelector('.friends__cards-container');
     cards.appendChild(sliderCard);
 
 });
+}
+
+createCarts(cartsItem);
+
+let currentPage = 1;
+const itemsPerPage = 8;
+// let countOfItems = Math.ceil(cartsItem.length / itemsPerPage);
+const pageNumber = document.querySelector('.button-friends_number');
+const endButton = document.getElementById('end');
+const startButton = document.getElementById('start');
+const nextButton = document.getElementById('nextButton');
+const prevButton = document.getElementById('prevButton');
+
+function buttonsDisabled () {
+    startButton.disabled = false;
+    prevButton.disabled = false;
+    endButton.disabled = false;
+    nextButton.disabled = false;
+}
+
+nextButton.addEventListener('click', () => {
+    currentPage++;
+    pageNumber.textContent = currentPage;
+    buttonsDisabled ();
+    if ( currentPage === 6) {
+        endButton.disabled = true;
+        nextButton.disabled = true;
+    }
+ }
+)
+ prevButton.addEventListener('click', () => {
+    currentPage--;
+    pageNumber.textContent = currentPage;
+    buttonsDisabled ()
+    if ( currentPage === 1) {
+        startButton.disabled = true;
+        prevButton.disabled = true;
+    }
+ }
+ )
+ startButton.addEventListener('click', () => {
+    currentPage = 1;
+    buttonsDisabled ();
+    startButton.disabled = true;
+    prevButton.disabled = true;
+    pageNumber.textContent = currentPage;
+ }
+)
+endButton.addEventListener('click', () => {
+    currentPage = 6;
+    buttonsDisabled ();
+    endButton.disabled = true;
+    nextButton.disabled = true;
+    pageNumber.textContent = currentPage;
+ }
+ )
+
+
+//   function showPage(page) {
+//     const startIndex = (page - 1) * itemsPerPage;
+//     const endIndex = startIndex + itemsPerPage;
+
+//     let notes = cartsItem.slice(startIndex, endIndex);
+//   }
+
+
+

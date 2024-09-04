@@ -678,18 +678,25 @@ h5 {
 .slider__line {
   max-width: 990px;
   overflow: hidden;
-  position: relative;
+  max-height: 435px;
+}
+@media (max-width: 768px) {
+  .slider__line {
+    max-width: 580px;
+  }
+}
+@media (max-width: 320px) {
+  .slider__line {
+    max-width: 270px;
+  }
 }
 
 .slider__container {
   display: flex;
   gap: 90px;
-  justify-content: space-around;
-  max-height: 435px;
-  flex-wrap: wrap;
-  box-sizing: border-box;
   position: relative;
-  transition: top 500ms linear;
+  left: -1080px;
+  transition: left 500ms linear;
 }
 @media (max-width: 768px) {
   .slider__container {
@@ -1316,6 +1323,7 @@ h5 {
 
 .burger-line_friends {
   border: solid 1px rgb(0, 0, 0);
+  width: 100%;
 }
 
 .friends__contants {
