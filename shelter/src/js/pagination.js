@@ -100,16 +100,21 @@ arr.forEach( (res) => {
 });
 }
 
-createCarts(cartsItem);
 
 let currentPage = 1;
 const itemsPerPage = 8;
-// let countOfItems = Math.ceil(cartsItem.length / itemsPerPage);
+//let countOfItems = Math.ceil(cartsItem.length / itemsPerPage);
 const pageNumber = document.querySelector('.button-friends_number');
 const endButton = document.getElementById('end');
 const startButton = document.getElementById('start');
 const nextButton = document.getElementById('nextButton');
 const prevButton = document.getElementById('prevButton');
+
+startButton.disabled = currentPage === 1;
+prevButton.disabled = currentPage === 1;
+// endButton.disabled = currentPage === 6;
+// nextButton.disabled = currentPage === 6;
+pageNumber.textContent = currentPage;
 
 function buttonsDisabled () {
     startButton.disabled = false;
@@ -122,10 +127,12 @@ nextButton.addEventListener('click', () => {
     currentPage++;
     pageNumber.textContent = currentPage;
     buttonsDisabled ();
+    createCarts(cartsItem);
     if ( currentPage === 6) {
         endButton.disabled = true;
         nextButton.disabled = true;
     }
+    showPageCarts(currentPage, 8);
  }
 )
  prevButton.addEventListener('click', () => {
@@ -136,6 +143,7 @@ nextButton.addEventListener('click', () => {
         startButton.disabled = true;
         prevButton.disabled = true;
     }
+    showPageCarts(currentPage, 8);
  }
  )
  startButton.addEventListener('click', () => {
@@ -155,13 +163,56 @@ endButton.addEventListener('click', () => {
  }
  )
 
+//Создаю новый массив  [ [], [], [] ]
+function masivPush(arr) {
+    let copy = [];
+    for (let i = 0; i < 6; i++) {
+       copy.push([...arr]);
+    }
+    return copy;
+}
 
-//   function showPage(page) {
-//     const startIndex = (page - 1) * itemsPerPage;
-//     const endIndex = startIndex + itemsPerPage;
+//функция для рандомной сортировки
+function mixArray(arr) {
+    for (let subArr of arr) {
+        subArr.sort(() => Math.random() - 0.5);
+    }
+}
 
-//     let notes = cartsItem.slice(startIndex, endIndex);
-//   }
+let cloneCartsItems = [];
+cloneCartsItems = masivPush(cartsItem);
+mixArray(cloneCartsItems); //преобразуем в рандом
+
+//Склеиваю массив
+let cloneMixidCartsItems = [].concat(...cloneCartsItems);
 
 
 
+//перемешиваю карточки
+//cartsItem.sort(() => Math.random() - 0.5);
+
+// createCarts(cartsItem);
+
+// В текущий массив добавляю карточки
+// function masivPush(arr) {
+//     let copy = [...arr, ...arr, ...arr, ...arr, ...arr, ...arr];
+//     return copy;
+// }
+
+// let cloneCartsItems = [];
+//  cloneCartsItems = masivPush(cartsItem);
+// console.log(cloneCartsItems);
+
+// cloneCartsItems.sort(() => Math.random() - 0.5);
+
+function showPageCarts(currentPage, itemsPerPage) {
+    let startIndex = (currentPage - 1) * itemsPerPage;
+    let endIndex = startIndex + itemsPerPage;
+    let note = cloneMixidCartsItems.slice(startIndex, endIndex);
+    let cards = document.querySelector('.friends__cards-container');
+    cards.innerHTML = '';
+    return createCarts(note);
+}
+
+// Первоначальная инициализация карточек
+showPageCarts(1, 8) ;
