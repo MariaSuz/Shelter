@@ -231,33 +231,9 @@ endButton.addEventListener('click', () => {
 
 
 //=========================================Попап==========================================================
-const modal = document.querySelector('.modal');
-const modalOpen = document.querySelectorAll('.slider__card');
-const modalClose = document.querySelector('.modal__close-button');
-
-// Для каждого элемента при клике вызываем ф-ию
-modalOpen.forEach((link) => {
-  link.addEventListener("click", openModal);
-});
-
-function openModal() {
-  modal.classList.add('modal-open');
-  body.classList.add('noscrollmodal');
-}
-
-//прячу меню при клике вне меню и крестик
-modalClose.addEventListener('click', closeModal);
-function closeModal() {
-  modal.classList.remove('modal-open');
-}
-
-//прячу при клике вне модального меню
-document.addEventListener( 'click', (event) => {
-  if (event.target == modal) {
-    closeModal();
-    body.classList.remove('noscrollmodal');
-   }
-})
+ const modal = document.querySelector('.modal');
+ const modalOpen = document.querySelectorAll('.slider__card');
+// const modalClose = document.querySelector('.modal__close-button');
 
 const cartsElement = [
     {
@@ -267,6 +243,7 @@ const cartsElement = [
         'src' : 'src/img/pets-katrine.png',
         'alt' : 'Katrine',
         'description' : 'Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.',
+        'age': '2 years',
         'inoculations': ['none'],
         'diseases': ['none'],
         'parasites': ['none'],
@@ -285,7 +262,6 @@ function createModal(arr) {
         let h4 = document.createElement('h4');
         let modalText = document.createElement('span');
         let ul = document.createElement('ul');
-        let li = document.createElement('li');
 
         modalContainer.classList.add('modal__container');
         buttonModal.classList.add('modal__close-button');
@@ -297,7 +273,6 @@ function createModal(arr) {
         h4.classList.add('h4_modal');
         modalText.classList.add('modal__text');
         ul.classList.add('modal__ul');
-        li.classList.add('modal__li');
 
 
         imageModal.src = res.src;
@@ -306,12 +281,56 @@ function createModal(arr) {
         h4.textContent = res.animal;
         modalText.textContent = res.description;
 
+        modalContainer.appendChild(buttonModal);
+        modalContainer.appendChild(modalWindow);
+        buttonModal.appendChild(buttonSpan);
+        modalWindow.appendChild(imageModal);
+        modalWindow.appendChild(modalWindowContainer);
+        modalWindowContainer.appendChild(h3);
+        modalWindowContainer.appendChild(h4);
+        modalWindowContainer.appendChild(modalText);
+        modalWindowContainer.appendChild(ul);
+        for (let i = 1; i <= 4; i++) {
+            let li = document.createElement('li');
+            let span1 = document.createElement('span');
+            let span2 = document.createElement('span');
+            li.classList.add('modal__li');
+            li.classList.add('modal__span');
+            span1.textContent = res['age'];
+            span2.textContent = res.inoculations + ': ';
+            li.appendChild(span2);
+            li.appendChild(span1);
+            ul.appendChild(li);
+        }
 
-        sliderCard.appendChild(imageCard);
-
+        const modal = document.querySelector('.modal');
+        modal.appendChild(modalContainer);
 
     });
     }
 
     createModal(cartsElement)
-
+    const modalClose = document.querySelector('.modal__close-button');
+    // Для каждого элемента при клике вызываем ф-ию
+    modalOpen.forEach((link) => {
+      link.addEventListener("click", openModal);
+    });
+    
+    function openModal() {
+      modal.classList.add('modal-open');
+      body.classList.add('noscrollmodal');
+    }
+    
+    //прячу меню при клике вне меню и крестик
+    modalClose.addEventListener('click', closeModal);
+    function closeModal() {
+      modal.classList.remove('modal-open');
+      body.classList.remove('noscrollmodal');
+    }
+    
+    //прячу при клике вне модального меню
+    document.addEventListener( 'click', (event) => {
+      if (event.target == modal) {
+        closeModal();
+       }
+    })
