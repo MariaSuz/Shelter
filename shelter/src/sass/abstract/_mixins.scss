@@ -32,3 +32,12 @@
 @mixin navigationsize {
     @media (max-width: 767px){ @content; }
 }
+
+
+@mixin navigationsize {
+    @media (max-width: 767px){ @content; }
+}
+
+@mixin madals-size {
+    @media (max-width: 440px){ @content; }
+}

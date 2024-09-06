@@ -230,3 +230,88 @@ endButton.addEventListener('click', () => {
  }
 
 
+//=========================================Попап==========================================================
+const modal = document.querySelector('.modal');
+const modalOpen = document.querySelectorAll('.slider__card');
+const modalClose = document.querySelector('.modal__close-button');
+
+// Для каждого элемента при клике вызываем ф-ию
+modalOpen.forEach((link) => {
+  link.addEventListener("click", openModal);
+});
+
+function openModal() {
+  modal.classList.add('modal-open');
+  body.classList.add('noscrollmodal');
+}
+
+//прячу меню при клике вне меню и крестик
+modalClose.addEventListener('click', closeModal);
+function closeModal() {
+  modal.classList.remove('modal-open');
+}
+
+//прячу при клике вне модального меню
+document.addEventListener( 'click', (event) => {
+  if (event.target == modal) {
+    closeModal();
+    body.classList.remove('noscrollmodal');
+   }
+})
+
+const cartsElement = [
+    {
+        'id' : 1,
+        'name' : 'Katrine',
+        'animal' : 'Cat - British Shorthair',
+        'src' : 'src/img/pets-katrine.png',
+        'alt' : 'Katrine',
+        'description' : 'Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.',
+        'inoculations': ['none'],
+        'diseases': ['none'],
+        'parasites': ['none'],
+    }]
+
+//создаю карточку
+function createModal(arr) {
+    arr.forEach( (res) => {
+        let modalContainer = document.createElement('div');
+        let buttonModal = document.createElement('button');
+        let buttonSpan = document.createElement('span');
+        let modalWindow = document.createElement('div');
+        let imageModal = document.createElement('img');
+        let modalWindowContainer = document.createElement('div');
+        let h3 = document.createElement('h3');
+        let h4 = document.createElement('h4');
+        let modalText = document.createElement('span');
+        let ul = document.createElement('ul');
+        let li = document.createElement('li');
+
+        modalContainer.classList.add('modal__container');
+        buttonModal.classList.add('modal__close-button');
+        buttonSpan.classList.add('modal__close-button_span');
+        modalWindow.classList.add('modal__window');
+        imageModal.classList.add('modal__window__img');
+        modalWindowContainer.classList.add('modal__window__container');
+        h3.classList.add('h3__modal');
+        h4.classList.add('h4_modal');
+        modalText.classList.add('modal__text');
+        ul.classList.add('modal__ul');
+        li.classList.add('modal__li');
+
+
+        imageModal.src = res.src;
+        imageModal.alt = res.alt;
+        h3.textContent = res.name;
+        h4.textContent = res.animal;
+        modalText.textContent = res.description;
+
+
+        sliderCard.appendChild(imageCard);
+
+
+    });
+    }
+
+    createModal(cartsElement)
+
