@@ -100,68 +100,31 @@ arr.forEach( (res) => {
 });
 }
 
+  //Выполняю скрипт при изменении размера окна
+  window.addEventListener('resize', function(){
+    itemsPerPage = widthSee();
+    countOfItems = Math.ceil(cloneMixidCartsItems.length / itemsPerPage);
+});
+
 
 let currentPage = 1;
-const itemsPerPage = 8;
-//let countOfItems = Math.ceil(cartsItem.length / itemsPerPage);
+let itemsPerPage = 8;
+
+
+
 const pageNumber = document.querySelector('.button-friends_number');
 const endButton = document.getElementById('end');
 const startButton = document.getElementById('start');
 const nextButton = document.getElementById('nextButton');
 const prevButton = document.getElementById('prevButton');
 
+//Первоначальная инициализация кнопок.
 startButton.disabled = currentPage === 1;
 prevButton.disabled = currentPage === 1;
-// endButton.disabled = currentPage === 6;
-// nextButton.disabled = currentPage === 6;
 pageNumber.textContent = currentPage;
 
-function buttonsDisabled () {
-    startButton.disabled = false;
-    prevButton.disabled = false;
-    endButton.disabled = false;
-    nextButton.disabled = false;
-}
 
-nextButton.addEventListener('click', () => {
-    currentPage++;
-    pageNumber.textContent = currentPage;
-    buttonsDisabled ();
-    createCarts(cartsItem);
-    if ( currentPage === 6) {
-        endButton.disabled = true;
-        nextButton.disabled = true;
-    }
-    showPageCarts(currentPage, 8);
- }
-)
- prevButton.addEventListener('click', () => {
-    currentPage--;
-    pageNumber.textContent = currentPage;
-    buttonsDisabled ()
-    if ( currentPage === 1) {
-        startButton.disabled = true;
-        prevButton.disabled = true;
-    }
-    showPageCarts(currentPage, 8);
- }
- )
- startButton.addEventListener('click', () => {
-    currentPage = 1;
-    buttonsDisabled ();
-    startButton.disabled = true;
-    prevButton.disabled = true;
-    pageNumber.textContent = currentPage;
- }
-)
-endButton.addEventListener('click', () => {
-    currentPage = 6;
-    buttonsDisabled ();
-    endButton.disabled = true;
-    nextButton.disabled = true;
-    pageNumber.textContent = currentPage;
- }
- )
+ //=======Работа с карточками! ====
 
 //Создаю новый массив  [ [], [], [] ]
 function masivPush(arr) {
@@ -186,26 +149,10 @@ mixArray(cloneCartsItems); //преобразуем в рандом
 //Склеиваю массив
 let cloneMixidCartsItems = [].concat(...cloneCartsItems);
 
+let countOfItems = Math.ceil(cloneMixidCartsItems.length / itemsPerPage); //количество страниц
 
 
-//перемешиваю карточки
-//cartsItem.sort(() => Math.random() - 0.5);
-
-// createCarts(cartsItem);
-
-// В текущий массив добавляю карточки
-// function masivPush(arr) {
-//     let copy = [...arr, ...arr, ...arr, ...arr, ...arr, ...arr];
-//     return copy;
-// }
-
-// let cloneCartsItems = [];
-//  cloneCartsItems = masivPush(cartsItem);
-// console.log(cloneCartsItems);
-
-// cloneCartsItems.sort(() => Math.random() - 0.5);
-
-function showPageCarts(currentPage, itemsPerPage) {
+function showPageCarts(currentPage) {
     let startIndex = (currentPage - 1) * itemsPerPage;
     let endIndex = startIndex + itemsPerPage;
     let note = cloneMixidCartsItems.slice(startIndex, endIndex);
@@ -215,4 +162,71 @@ function showPageCarts(currentPage, itemsPerPage) {
 }
 
 // Первоначальная инициализация карточек
-showPageCarts(1, 8) ;
+showPageCarts(1) ;
+
+//===== Работа с кнопками===
+function buttonsDisabled () {
+    startButton.disabled = false;
+    prevButton.disabled = false;
+    endButton.disabled = false;
+    nextButton.disabled = false;
+}
+
+nextButton.addEventListener('click', () => {
+    currentPage++;
+    pageNumber.textContent = currentPage;
+    buttonsDisabled();
+    if ( currentPage === countOfItems) {
+        endButton.disabled = true;
+        nextButton.disabled = true;
+    }
+    showPageCarts(currentPage);
+ }
+)
+ prevButton.addEventListener('click', () => {
+    currentPage--;
+    pageNumber.textContent = currentPage;
+    buttonsDisabled ()
+    if ( currentPage === 1) {
+        startButton.disabled = true;
+        prevButton.disabled = true;
+    }
+    showPageCarts(currentPage);
+ }
+ )
+ startButton.addEventListener('click', () => {
+    currentPage = 1;
+    buttonsDisabled ();
+    startButton.disabled = true;
+    prevButton.disabled = true;
+    pageNumber.textContent = currentPage;
+    showPageCarts(currentPage);
+ }
+)
+endButton.addEventListener('click', () => {
+    currentPage = countOfItems;
+    buttonsDisabled ();
+    endButton.disabled = true;
+    nextButton.disabled = true;
+    pageNumber.textContent = currentPage;
+    showPageCarts(currentPage);
+ }
+ )
+
+
+ function widthSee() {
+    let width = window.innerWidth;
+    let pagesPage = 0;
+
+    if (width <= 639) {
+        pagesPage = 3;
+    } else if (width <= 768) {
+        pagesPage = 6;
+    }
+    else {
+        pagesPage = 8;
+    }
+    return pagesPage;
+ }
+
+
