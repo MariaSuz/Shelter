@@ -388,6 +388,7 @@ function createModal(arr) {
 
 
     function openModal(modalCart) {
+        modal.innerHTML = '';
         createModal(modalCart)
         modal.classList.add('modal-open');
         body.classList.add('noscrollmodal');
