@@ -6,6 +6,10 @@ const cartsItem = [
         'src' : 'src/img/pets-katrine.png',
         'alt' : 'Katrine',
         'description' : 'Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.',
+        'age' : '6 months',
+        'inoculations': ['panleukopenia'],
+        'diseases': ['none'],
+        'parasites': ['none'],
     },
     {
         'id' : 2,
@@ -14,6 +18,10 @@ const cartsItem = [
         'src' : 'src/img/pets-jennifer.png',
         'alt' : 'pets-jennifer',
         'description' : "Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.",
+        'age' : "2 months",
+        'inoculations': ['none'],
+        'diseases': ['none'],
+        'parasites': ['none'],
     },
     {
         'id' : 3,
@@ -22,6 +30,10 @@ const cartsItem = [
         'src' : 'src/img/pets-woody.png',
         'alt' : 'pets-woody',
         'description' : 'Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.',
+        'age' : '3 years 6 months',
+        'inoculations': ['adenovirus', 'distemper'],
+        'diseases': ['right back leg mobility reduced'],
+        'parasites': ['none'],
     },
     {
         'id' : 4,
@@ -30,6 +42,10 @@ const cartsItem = [
         'src' : 'src/img/pets-sophia.png',
         'alt' : 'pets-sophia',
         'description' : 'Sophia here and I\'m looking for my forever home to live out the best years of my life. I am full of energy. Everyday I\'m learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.',
+        'age' : '"1 month',
+        'inoculations': ['parvovirus'],
+        'diseases': ['none'],
+        'parasites': ['none'],
     },
     {
         'id' : 5,
@@ -38,6 +54,10 @@ const cartsItem = [
         'src' : 'src/img/pets-scarlet.png',
         'alt' : 'pets-scarlett',
         'description' : 'Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.',
+        'age' : '3 months',
+        'inoculations': ['parainfluenza'],
+        'diseases': ['none'],
+        'parasites': ['none'],
     },
     {
         'id' : 6,
@@ -46,6 +66,10 @@ const cartsItem = [
         'src' : 'src/img/pets-timmy.png',
         'alt' : 'pets-timmy',
         'description' : 'Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.',
+        'age' : '2 years 3 months',
+        'inoculations': ['calicivirus','viral rhinotracheitis' ],
+        'diseases': ['kidney stones'],
+        'parasites': ['none'],
     },
     {
         'id' : 7,
@@ -54,6 +78,10 @@ const cartsItem = [
         'src' : 'src/img/pets-freddie.png',
         'alt' : 'pets-freddie',
         'description' : 'Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.',
+        'age' : '2 months',
+        'inoculations': ['rabies'],
+        'diseases': ['none'],
+        'parasites': ['none'],
     },
     {
         'id' : 8,
@@ -62,6 +90,10 @@ const cartsItem = [
         'src' : 'src/img/pets-charly.png',
         'alt' : 'pets-charly',
         'description' : 'This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.',
+        'age' : '8 years',
+        'inoculations': ['bordetella bronchiseptica', 'leptospirosis'],
+        'diseases': ['deafness', 'blindness'],
+        'parasites': ['lice', 'fleas'],
     }
 ]
 
@@ -235,23 +267,9 @@ endButton.addEventListener('click', () => {
  const modalOpen = document.querySelectorAll('.slider__card');
 // const modalClose = document.querySelector('.modal__close-button');
 
-const cartsElement = [
-    {
-        'id' : 1,
-        'name' : 'Katrine',
-        'animal' : 'Cat - British Shorthair',
-        'src' : 'src/img/pets-katrine.png',
-        'alt' : 'Katrine',
-        'description' : 'Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.',
-        'age': '2 years',
-        'inoculations': ['none'],
-        'diseases': ['none'],
-        'parasites': ['none'],
-    }]
-
 //создаю карточку
 function createModal(arr) {
-    arr.forEach( (res) => {
+    arr.forEach( (value) => {
         let modalContainer = document.createElement('div');
         let buttonModal = document.createElement('button');
         let buttonSpan = document.createElement('span');
@@ -275,11 +293,11 @@ function createModal(arr) {
         ul.classList.add('modal__ul');
 
 
-        imageModal.src = res.src;
-        imageModal.alt = res.alt;
-        h3.textContent = res.name;
-        h4.textContent = res.animal;
-        modalText.textContent = res.description;
+        imageModal.src = value.src;
+        imageModal.alt = value.alt;
+        h3.textContent = value.name;
+        h4.textContent = value.animal;
+        modalText.textContent = value.description;
 
         modalContainer.appendChild(buttonModal);
         modalContainer.appendChild(modalWindow);
@@ -290,43 +308,105 @@ function createModal(arr) {
         modalWindowContainer.appendChild(h4);
         modalWindowContainer.appendChild(modalText);
         modalWindowContainer.appendChild(ul);
-        for (let i = 1; i <= 4; i++) {
-            let li = document.createElement('li');
-            let span1 = document.createElement('span');
-            let span2 = document.createElement('span');
-            li.classList.add('modal__li');
-            li.classList.add('modal__span');
-            span1.textContent = res['age'];
-            span2.textContent = res.inoculations + ': ';
-            li.appendChild(span2);
-            li.appendChild(span1);
-            ul.appendChild(li);
-        }
+        // value.modal.forEach( (mod) => {
+        //     let li = document.createElement('li');
+        //     let span1 = document.createElement('span');
+        //     let span2 = document.createElement('span');
+        //     li.classList.add('modal__li');
+        //     li.classList.add('modal__span');
+        //     span1.textContent = mod.age;
+        //     span2.textContent = mod.inoculations + ': ';
+        //     li.appendChild(span2);
+        //     li.appendChild(span1);
+        //     ul.appendChild(li);
+        // }
 
+        //Создаю список, пока не сокращаю
+        let liAge = document.createElement('li');
+        let liIno = document.createElement('li');
+        let liDis = document.createElement('li');
+        let liPar = document.createElement('li');
+        liAge.classList.add('modal__li');
+        liIno.classList.add('modal__li');
+        liDis.classList.add('modal__li');
+        liPar.classList.add('modal__li');
+        liAge.classList.add('modal__span');
+        liIno.classList.add('modal__span');
+        liDis.classList.add('modal__span');
+        liPar.classList.add('modal__span');
+        let spanAge = document.createElement('span');
+        let spanIno = document.createElement('span');
+        let spanDis = document.createElement('span');
+        let spanPar = document.createElement('span');
+        spanAge.classList.add('modal__span2');
+        spanIno.classList.add('modal__span2');
+        spanDis.classList.add('modal__span2');
+        spanPar.classList.add('modal__span2');
+        spanAge.textContent = 'Age: ';
+        spanIno.textContent = 'Inoculations: ';
+        spanDis.textContent = 'Diseases: ';
+        spanPar.textContent = 'Parasites: ';
+        let spanAge2 = document.createElement('span');
+        let spanIno2 = document.createElement('span');
+        let spanDis2 = document.createElement('span');
+        let spanPar2 = document.createElement('span');
+        spanAge2.textContent = value.age;
+        spanIno2.textContent = value.inoculations;
+        spanDis2.textContent = value.diseases;
+        spanPar2.textContent = value.parasites;
+        liAge.appendChild(spanAge);
+        liAge.appendChild(spanAge2);
+        liIno.appendChild(spanIno);
+        liIno.appendChild(spanIno2);
+        liDis.appendChild(spanDis);
+        liDis.appendChild(spanDis2);
+        liPar.appendChild(spanPar);
+        liPar.appendChild(spanPar2);
+        ul.appendChild(liAge);
+        ul.appendChild(liIno);
+        ul.appendChild(liDis);
+        ul.appendChild(liPar);
+      
         const modal = document.querySelector('.modal');
         modal.appendChild(modalContainer);
 
     });
     }
 
-    createModal(cartsElement)
-    const modalClose = document.querySelector('.modal__close-button');
     // Для каждого элемента при клике вызываем ф-ию
     modalOpen.forEach((link) => {
-      link.addEventListener("click", openModal);
+      link.addEventListener("click", (event) =>{
+        //let id = event.target.id;
+        let id = event.target.closest("div").id
+        //let id = 3;
+        let modalCart = cartsItem.filter(function(cart) {
+            return  cart.id == id;
+            })
+        openModal(modalCart);
+      });
     });
-    
-    function openModal() {
-      modal.classList.add('modal-open');
-      body.classList.add('noscrollmodal');
+
+
+    function openModal(modalCart) {
+        createModal(modalCart)
+        modal.classList.add('modal-open');
+        body.classList.add('noscrollmodal');
+
+        const modalClose = document.querySelector('.modal__close-button');
+        //прячу меню при клике вне меню и крестик
+         modalClose.addEventListener('click', closeModal);
+ 
     }
-    
+
     //прячу меню при клике вне меню и крестик
-    modalClose.addEventListener('click', closeModal);
     function closeModal() {
-      modal.classList.remove('modal-open');
-      body.classList.remove('noscrollmodal');
-    }
+        modal.classList.remove('modal-open');
+        body.classList.remove('noscrollmodal');
+        modalClose.innerHTML = '';
+      }
+    
+    //let modalClose = document.querySelector('.modal__close-button');
+
     
     //прячу при клике вне модального меню
     document.addEventListener( 'click', (event) => {

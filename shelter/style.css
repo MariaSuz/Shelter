@@ -194,6 +194,7 @@ h5 {
 @media (max-width: 768px) {
   .modal__container {
     max-width: 630px;
+    max-width: 630px;
   }
 }
 @media (max-width: 767px) {
@@ -368,6 +369,10 @@ h5 {
   font-weight: 400;
   color: rgb(0, 0, 0);
   letter-spacing: 0.06em;
+}
+
+.modal__span2 {
+  font-weight: bold;
 }
 
 .modal__close-button {

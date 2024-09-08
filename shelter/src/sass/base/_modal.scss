@@ -29,6 +29,7 @@
     }
     @include media-tablet{
         max-width: 630px;
+        max-width: 630px;
     }
     @include navigationsize{
         top: 10%;
@@ -154,6 +155,10 @@
     @include font(15px, 16.5px);
     color: rgba(0, 0, 0, 1);
     letter-spacing: 0.06em;
+}
+
+.modal__span2 {
+    font-weight: bold
 }
 
 //Модальный крестик
