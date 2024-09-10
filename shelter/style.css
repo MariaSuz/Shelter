@@ -867,7 +867,8 @@ h5 {
   padding-bottom: 100px;
   align-items: center;
   gap: 60px;
-  position: relative;
+  max-width: 1280px;
+  width: 100%;
 }
 @media (max-width: 320px) {
   .pets__content {
@@ -890,9 +891,9 @@ h5 {
 
 .slider {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 53px;
-  overflow: hidden;
   width: 100%;
 }
 @media (max-width: 1124px) and (min-width: 768px) {
@@ -903,13 +904,6 @@ h5 {
 @media (max-width: 768px) {
   .slider {
     gap: 12px;
-  }
-}
-@media (max-width: 514px) and (min-width: 320px) {
-  .slider {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px 80px;
   }
 }
 @media (max-width: 320px) {
@@ -923,7 +917,11 @@ h5 {
 .slider__line {
   max-width: 990px;
   overflow: hidden;
-  max-height: 435px;
+}
+@media (max-width: 1279px) {
+  .slider__line {
+    max-width: 660px;
+  }
 }
 @media (max-width: 768px) {
   .slider__line {
@@ -962,6 +960,37 @@ h5 {
   .slider__container {
     order: 1;
   }
+}
+
+@keyframes move-right {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: -2160px;
+  }
+}
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0px;
+  }
+}
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 5s;
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 5s;
+}
+
+.item {
+  display: flex;
+  gap: 90px;
 }
 
 .slider__card {

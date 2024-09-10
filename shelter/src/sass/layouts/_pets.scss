@@ -5,7 +5,9 @@
     padding-bottom: 100px;
     align-items: center;
     gap: 60px;
-    position: relative;
+   // position: relative;
+    max-width: 1280px;
+    width: 100%;
     @include media-mobile{
         padding-top: 42px;
         padding-bottom: 42px;
@@ -23,20 +25,21 @@
 }
 .slider {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 53px;
-    overflow: hidden;
+    //overflow: hidden;
     width: 100%;
     @include pc-tablet {
         gap: 12px;
     }
     @include media-tablet{
-        gap: 12px;
+         gap: 12px;
     }
     @include  tablet-mobile{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px 80px;
+       // flex-wrap: wrap;
+       // justify-content: center;
+      //  gap: 20px 80px;
     }
     @include media-mobile{
        flex-wrap: wrap;
@@ -48,8 +51,11 @@
 .slider__line{
     max-width: 990px;
     overflow: hidden;
-    max-height: 435px;
+    //max-height: 435px;
     @extend %transition;
+    @include  petscontant{
+        max-width: 660px;
+    }
     @include media-tablet{
         max-width: 580px;
     }
@@ -61,17 +67,10 @@
 .slider__container {
     display: flex;
     gap: 90px;
-    //justify-content: space-around;
-    //max-height: 435px;
-    //flex-wrap: wrap;
-    //box-sizing: border-box;
     position: relative;
-    //top: -520px;
-    //left: -70%;
     left: -1080px;
     transition: left 500ms linear;
     @extend %transition;
-
     @include media-tablet{
         gap: 40px;
     }
@@ -84,6 +83,31 @@
     @include  tablet-mobile{
         order: 1;
     }
+}
+
+//Анимация
+@keyframes move-right {
+    from {left: -1080px}
+    to {left: -2160px}
+}
+
+@keyframes move-left {
+    from {left: -990px}
+    to {left: 0px}
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 5s;
+}
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 5s;
+}
+
+.item{
+    display: flex;
+    gap: 90px;
 }
 
 .slider__card{
