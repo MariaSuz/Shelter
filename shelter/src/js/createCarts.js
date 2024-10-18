@@ -1,3 +1,4 @@
+
 function createCartsSliders(arr, item) {
     arr.forEach( (res) => {
     let divItem = item;

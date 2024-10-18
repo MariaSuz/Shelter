@@ -1,5 +1,7 @@
 import "./scripts/burger-menu.js";
-import {dataCards, createModal} from './js/cartsData.js';
+import {cartsItem} from './cartsData';
+import {createCartsSliders} from './js/createCarts.js';
+import "./js/popupmain.js";
 
 //=========================================Слайдер==========================================================
 //Создаю 3 массива для карточек
