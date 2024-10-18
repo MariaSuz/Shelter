@@ -45,3 +45,7 @@
 @mixin petscontant {
     @media (max-width: 1279px){ @content; }
 }
+
+@mixin petscontant2 {
+    @media (max-width: 875px){ @content; }
+}
