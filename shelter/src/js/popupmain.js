@@ -1,4 +1,5 @@
-import {createModal} from './createCarts';
+import {cartsItem} from './cartsData.js';
+import {createModal} from './createCarts.js';
 //=========================================Попап==========================================================
 const modal = document.querySelector('.modal');
 const modalOpen = document.querySelectorAll('.slider__card');
@@ -8,6 +9,7 @@ const modalOpen = document.querySelectorAll('.slider__card');
    modalOpen.forEach((link) => {
      link.addEventListener("click", (event) =>{
        //let id = event.target.id;
+       console.log('opeeeeen!')
        debugger
        let id = event.target.closest("div").id
        //let id = 3;

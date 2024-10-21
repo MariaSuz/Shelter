@@ -107,7 +107,6 @@ SLIDER_LINE.addEventListener('animationend', (animationEvent) => {
   BUTTON_LEFT.addEventListener('click', prevslider);
 });
 
-console.log(changedItem)
 
 //EVENT LISTENERS
 BUTTON_RIGHT.addEventListener('click', nextslider);
