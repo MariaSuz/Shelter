@@ -135,4 +135,33 @@ function createModal(arr) {
     });
     }
 
-export {createCartsSliders, createModal};
+
+    function createCarts(arr) {
+        arr.forEach( (res) => {
+            let sliderCard = document.createElement('div');
+            sliderCard.id = res.id;
+            sliderCard.classList.add('slider__card');
+        
+            let imageCard = document.createElement('img');
+            imageCard.src = res.src;
+            imageCard.alt = res.alt;
+            sliderCard.appendChild(imageCard);
+        
+            let textCard = document.createElement('span');
+            textCard.classList.add('slider__card__text');
+            textCard.textContent = res.name;
+            sliderCard.appendChild(textCard);
+        
+            let buttonCard = document.createElement('button');
+            buttonCard.textContent = "Learn more";
+            buttonCard.classList.add('button');
+            buttonCard.classList.add('button_card');
+            sliderCard.appendChild(buttonCard);
+        
+            let cards = document.querySelector('.friends__cards-container');
+            cards.appendChild(sliderCard);
+        
+        });
+        }    
+
+export {createCartsSliders, createModal, createCarts};

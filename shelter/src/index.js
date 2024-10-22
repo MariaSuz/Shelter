@@ -1,7 +1,7 @@
 import {cartsItem} from './js/cartsData.js';
 import {createCartsSliders} from './js/createCarts.js';
-import "./js/popupmain.js";
-import "./js/burger.js";
+import {createPopUp} from './js/popup.js';
+import './js/burger.js';
 
 //=========================================Слайдер==========================================================
 //Создаю 3 массива для карточек
@@ -112,4 +112,4 @@ SLIDER_LINE.addEventListener('animationend', (animationEvent) => {
 BUTTON_RIGHT.addEventListener('click', nextslider);
 BUTTON_LEFT.addEventListener('click', prevslider);
 
-
+createPopUp();

@@ -35,13 +35,21 @@ links.forEach((link) => {
 //     }
 // })
 
-//прячу меню при клике вне меню исправлено
+//прячу меню при клике вне меню исправлено (на 2 стриницы)
 document.addEventListener( 'click', (event) => {
-
   if (!menu.contains(event.target) && event.target.classList.value != 'burger-line') {
     closeOnClick();
-   } else if (event.target.classList.value == 'burger-line') {
+   }
+  if (!menu.contains(event.target) && event.target.classList.value != 'burger-line_friends') {
+    closeOnClick();
+   }
+  if (event.target.classList.value == 'burger-line_friends') {
+  toggleBurger();
+  }
+  if (event.target.classList.value == 'burger-line') {
     toggleBurger();
    }
 })
+
+
 
