@@ -30,16 +30,15 @@
     gap: 60px;
     //overflow: hidden;
     width: 100%;
-    @include pc-tablet {
-        gap: 12px;
-    }
     @include media-tablet{
+         position: relative;
          gap: 12px;
     }
     @include  tablet-mobile{
-       // flex-wrap: wrap;
-       // justify-content: center;
-      //  gap: 20px 80px;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 20px 80px;
+       max-width: 270px;
     }
     @include media-mobile{
        flex-wrap: wrap;
@@ -54,7 +53,7 @@
     //max-height: 435px;
     @extend %transition;
     @include  petscontant{
-        max-width: 660px;
+        max-width: 580px;
     }
     @include media-tablet{
         max-width: 580px;
@@ -69,24 +68,16 @@
     gap: 90px;
     position: relative;
     left: -1080px;
-    transition: left 500ms linear;
-    @extend %transition;
-    @include pc-tablet {
-        left: -990px;
+    @include petscontant{
+        left: -620px;
         gap: 40px;
-    }
-    @include petscontant2{
-        left: -1050px;
     }
     @include media-tablet{
+        left: -620px;
         gap: 40px;
-        left: -580px;
     }
     @include media-mobile{
-        order: 1;
-    }
-    @include  tablet-mobile{
-        order: 1;
+        left: -310px;
     }
 }
 
@@ -107,6 +98,29 @@
     to {left: 0px}
 }
 
+@include media-tablet {
+    @keyframes move-right {
+        from {left: -620px}
+        to {left: -1240px}
+    }
+    
+    @keyframes move-left {
+        from {left: -620px}
+        to {left: 0px}
+    } 
+}
+@include media-mobile {
+    @keyframes move-right {
+        from {left: -310px}
+        to {left: -620px}
+    }
+    
+    @keyframes move-left {
+        from {left: -310px}
+        to {left: 0px}
+    } 
+}
+
 .transition-right {
     animation-name: move-right;
     animation-duration: 5s;
@@ -119,6 +133,9 @@
 .item{
     display: flex;
     gap: 90px;
+    @include media-tablet {
+        gap: 40px;
+    }
 }
 
 .slider__card{
@@ -129,7 +146,7 @@
     border-radius: 9px;
     background-color: $background-color-pets-card;
     width: 270px;
-    height: 445px;
+    // height: 445px;
     transition: transform .2s;
     position: relative;
     order: 1;

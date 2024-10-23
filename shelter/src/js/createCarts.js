@@ -162,6 +162,6 @@ function createModal(arr) {
             cards.appendChild(sliderCard);
         
         });
-        }    
+        }
 
 export {createCartsSliders, createModal, createCarts};

@@ -7,7 +7,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.slider__card:hover, .slider__card, .slider__container, .slider__line, .modal, .button:hover, .button {
+.slider__card:hover, .slider__card, .slider__line, .modal, .button:hover, .button {
   transition: all 0.3s ease;
 }
 
@@ -896,14 +896,18 @@ h5 {
   gap: 60px;
   width: 100%;
 }
-@media (max-width: 1124px) and (min-width: 768px) {
+@media (max-width: 768px) {
   .slider {
+    position: relative;
     gap: 12px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 514px) and (min-width: 320px) {
   .slider {
-    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 80px;
+    max-width: 270px;
   }
 }
 @media (max-width: 320px) {
@@ -918,9 +922,9 @@ h5 {
   max-width: 990px;
   overflow: hidden;
 }
-@media (max-width: 1279px) {
+@media screen and (max-width: 1279px) {
   .slider__line {
-    max-width: 660px;
+    max-width: 580px;
   }
 }
 @media (max-width: 768px) {
@@ -939,37 +943,26 @@ h5 {
   gap: 90px;
   position: relative;
   left: -1080px;
-  transition: left 500ms linear;
 }
-@media (max-width: 1124px) and (min-width: 768px) {
+@media screen and (max-width: 1279px) {
   .slider__container {
-    left: -990px;
+    left: -620px;
     gap: 40px;
-  }
-}
-@media (max-width: 875px) {
-  .slider__container {
-    left: -1050px;
   }
 }
 @media (max-width: 768px) {
   .slider__container {
+    left: -620px;
     gap: 40px;
-    left: -580px;
   }
 }
 @media (max-width: 320px) {
   .slider__container {
-    order: 1;
-  }
-}
-@media (max-width: 514px) and (min-width: 320px) {
-  .slider__container {
-    order: 1;
+    left: -310px;
   }
 }
 
-@media (max-width: 1279px) {
+@media screen and (max-width: 1279px) {
   .item:first-child {
     display: none;
   }
@@ -990,6 +983,42 @@ h5 {
     left: 0px;
   }
 }
+@media (max-width: 768px) {
+  @keyframes move-right {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+}
+@media (max-width: 320px) {
+  @keyframes move-right {
+    from {
+      left: -310px;
+    }
+    to {
+      left: -620px;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -310px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+}
 .transition-right {
   animation-name: move-right;
   animation-duration: 5s;
@@ -1004,6 +1033,11 @@ h5 {
   display: flex;
   gap: 90px;
 }
+@media (max-width: 768px) {
+  .item {
+    gap: 40px;
+  }
+}
 
 .slider__card {
   display: flex;
@@ -1013,7 +1047,6 @@ h5 {
   border-radius: 9px;
   background-color: rgb(250, 250, 250);
   width: 270px;
-  height: 445px;
   transition: transform 0.2s;
   position: relative;
   order: 1;
