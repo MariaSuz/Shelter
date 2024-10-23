@@ -70,68 +70,76 @@ function createModal(arr) {
         modalWindowContainer.appendChild(h4);
         modalWindowContainer.appendChild(modalText);
         modalWindowContainer.appendChild(ul);
-        // value.modal.forEach( (mod) => {
-        //     let li = document.createElement('li');
-        //     let span1 = document.createElement('span');
-        //     let span2 = document.createElement('span');
-        //     li.classList.add('modal__li');
-        //     li.classList.add('modal__span');
-        //     span1.textContent = mod.age;
-        //     span2.textContent = mod.inoculations + ': ';
-        //     li.appendChild(span2);
-        //     li.appendChild(span1);
-        //     ul.appendChild(li);
-        // }
+
  
         //Создаю список, пока не сокращаю
-        let liAge = document.createElement('li');
-        let liIno = document.createElement('li');
-        let liDis = document.createElement('li');
-        let liPar = document.createElement('li');
-        liAge.classList.add('modal__li');
-        liIno.classList.add('modal__li');
-        liDis.classList.add('modal__li');
-        liPar.classList.add('modal__li');
-        liAge.classList.add('modal__span');
-        liIno.classList.add('modal__span');
-        liDis.classList.add('modal__span');
-        liPar.classList.add('modal__span');
-        let spanAge = document.createElement('span');
-        let spanIno = document.createElement('span');
-        let spanDis = document.createElement('span');
-        let spanPar = document.createElement('span');
-        spanAge.classList.add('modal__span2');
-        spanIno.classList.add('modal__span2');
-        spanDis.classList.add('modal__span2');
-        spanPar.classList.add('modal__span2');
-        spanAge.textContent = 'Age: ';
-        spanIno.textContent = 'Inoculations: ';
-        spanDis.textContent = 'Diseases: ';
-        spanPar.textContent = 'Parasites: ';
-        let spanAge2 = document.createElement('span');
-        let spanIno2 = document.createElement('span');
-        let spanDis2 = document.createElement('span');
-        let spanPar2 = document.createElement('span');
-        spanAge2.textContent = value.age;
-        spanIno2.textContent = value.inoculations;
-        spanDis2.textContent = value.diseases;
-        spanPar2.textContent = value.parasites;
-        liAge.appendChild(spanAge);
-        liAge.appendChild(spanAge2);
-        liIno.appendChild(spanIno);
-        liIno.appendChild(spanIno2);
-        liDis.appendChild(spanDis);
-        liDis.appendChild(spanDis2);
-        liPar.appendChild(spanPar);
-        liPar.appendChild(spanPar2);
-        ul.appendChild(liAge);
-        ul.appendChild(liIno);
-        ul.appendChild(liDis);
-        ul.appendChild(liPar);
+        let liArr = [
+            {name: 'Age: ', src: value.age},
+            {name: 'Inoculations: ', src: value.inoculations},
+            {name:  'Diseases: ', src: value.diseases},
+            {name:  'Parasites: ', src: value.parasites}
+        ];
+        liArr.forEach(function(el) {
+            let li = document.createElement('li');
+            li.classList.add('modal__li');
+            li.classList.add('modal__span');
+            let span = document.createElement('span');
+            span.classList.add('modal__span2');
+            span.textContent = el.name;
+            li.appendChild(span);
+            let span2 = document.createElement('span');
+            span2.textContent = el.src;
+            li.appendChild(span2);
+            ul.appendChild(li);
+        });
+
+        // let liAge = document.createElement('li');
+        // let liIno = document.createElement('li');
+        // let liDis = document.createElement('li');
+        // let liPar = document.createElement('li');
+        // liAge.classList.add('modal__li');
+        // liIno.classList.add('modal__li');
+        // liDis.classList.add('modal__li');
+        // liPar.classList.add('modal__li');
+        // liAge.classList.add('modal__span');
+        // liIno.classList.add('modal__span');
+        // liDis.classList.add('modal__span');
+        // liPar.classList.add('modal__span');
+        // let spanAge = document.createElement('span');
+        // let spanIno = document.createElement('span');
+        // let spanDis = document.createElement('span');
+        // let spanPar = document.createElement('span');
+        // spanAge.classList.add('modal__span2');
+        // spanIno.classList.add('modal__span2');
+        // spanDis.classList.add('modal__span2');
+        // spanPar.classList.add('modal__span2');
+        // spanAge.textContent = 'Age: ';
+        // spanIno.textContent = 'Inoculations: ';
+        // spanDis.textContent = 'Diseases: ';
+        // spanPar.textContent = 'Parasites: ';
+        // let spanAge2 = document.createElement('span');
+        // let spanIno2 = document.createElement('span');
+        // let spanDis2 = document.createElement('span');
+        // let spanPar2 = document.createElement('span');
+        // spanAge2.textContent = value.age;
+        // spanIno2.textContent = value.inoculations;
+        // spanDis2.textContent = value.diseases;
+        // spanPar2.textContent = value.parasites;
+        // liAge.appendChild(spanAge);
+        // liAge.appendChild(spanAge2);
+        // liIno.appendChild(spanIno);
+        // liIno.appendChild(spanIno2);
+        // liDis.appendChild(spanDis);
+        // liDis.appendChild(spanDis2);
+        // liPar.appendChild(spanPar);
+        // liPar.appendChild(spanPar2);
+        // ul.appendChild(liAge);
+        // ul.appendChild(liIno);
+        // ul.appendChild(liDis);
+        // ul.appendChild(liPar);
       
         const modal = document.querySelector('.modal');
         modal.appendChild(modalContainer);
- 
     });
     }
 

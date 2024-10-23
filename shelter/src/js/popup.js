@@ -38,6 +38,7 @@ const body = document.body;
    function closeModal() {
        modal.classList.remove('modal-open');
        body.classList.remove('noscrollmodal');
+       const modalClose = document.querySelector('.modal__close-button');
        modalClose.innerHTML = '';
      }
 
