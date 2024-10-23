@@ -4,15 +4,35 @@ import {createPopUp} from './js/popup.js';
 import './js/burger.js';
 
 
+let currentPage = 1;
+let countCartPets = widthSee();
+
 //Выполняю скрипт при изменении размера окна
-  window.addEventListener('resize', function(){
-    itemsPerPage = widthSee();
-    countOfItems = Math.ceil(cloneMixidCartsItems.length / itemsPerPage);
+window.addEventListener('resize', function(){
+    countCartPets = widthSee();
+    cloneMixidCartsItems = createCartsPagination();
+    countOfItems = Math.ceil(cloneMixidCartsItems.length / countCartPets);
+    let cards = document.querySelector('.friends__cards-container');
+    cards.innerHTML = '';
+    showPageCarts(1);
 });
 
+function widthSee() {
+    let width = window.innerWidth;
+    let countCartPets = 0;
 
-let currentPage = 1;
-let itemsPerPage = 8;
+    if (width >= 1280 || width <= 950) {
+        countCartPets = 8;
+    }
+    if (width <= 949) {
+        countCartPets = 6;
+    }
+    if (width <= 639) {
+        countCartPets = 3;
+    }
+    return countCartPets;
+ }
+
 
 const pageNumber = document.querySelector('.button-friends_number');
 const endButton = document.getElementById('end');
@@ -28,35 +48,42 @@ pageNumber.textContent = currentPage;
 
  //=======Работа с карточками! ====
 
-//Создаю новый массив  [ [], [], [] ]
-function masivPush(arr) {
-    let copy = [];
-    for (let i = 0; i < 6; i++) {
-       copy.push([...arr]);
+ function createCartsPagination() {
+    //Создаю новый массив  [ [], [], [] ]
+    function masivPush(arr) {
+        let copy = [];
+        for (let i = 0; i < 6; i++) {
+           copy.push([...arr]);
+        }
+        return copy;
     }
-    return copy;
-}
 
-//функция для рандомной сортировки
-function mixArray(arr) {
-    for (let subArr of arr) {
-        subArr.sort(() => Math.random() - 0.5);
+    //функция для рандомной сортировки
+    function mixArray(arr) {
+        for (let subArr of arr) {
+            subArr.sort(() => Math.random() - 0.5);
+        }
     }
-}
 
-let cloneCartsItems = [];
-cloneCartsItems = masivPush(cartsItem);
-mixArray(cloneCartsItems); //преобразуем в рандом
+    let cloneCartsItems = [];
+    cloneCartsItems = masivPush(cartsItem);
+    mixArray(cloneCartsItems); //преобразуем в рандом
 
-//Склеиваю массив
-let cloneMixidCartsItems = [].concat(...cloneCartsItems);
+    //Склеиваю массив
+    let cloneMixidCartsItems = [].concat(...cloneCartsItems);
 
-let countOfItems = Math.ceil(cloneMixidCartsItems.length / itemsPerPage); //количество страниц
+    return cloneMixidCartsItems;
+ }
+
+
+
+ let cloneMixidCartsItems = createCartsPagination();
+ let countOfItems = Math.ceil(cloneMixidCartsItems.length / countCartPets); //количество страниц
 
 
 function showPageCarts(currentPage) {
-    let startIndex = (currentPage - 1) * itemsPerPage;
-    let endIndex = startIndex + itemsPerPage;
+    let startIndex = (currentPage - 1) * countCartPets;
+    let endIndex = startIndex + countCartPets;
     let note = cloneMixidCartsItems.slice(startIndex, endIndex);
     let cards = document.querySelector('.friends__cards-container');
     cards.innerHTML = '';
@@ -114,23 +141,5 @@ endButton.addEventListener('click', () => {
     showPageCarts(currentPage);
  }
  )
-
-
- function widthSee() {
-    let width = window.innerWidth;
-    let pagesPage = 0;
-
-    if (width <= 639) {
-        pagesPage = 3;
-    } else if (width <= 768) {
-        pagesPage = 6;
-    }
-    else {
-        pagesPage = 8;
-    }
-    return pagesPage;
- }
-
-
 //=========================================Попап==========================================================
 createPopUp();
