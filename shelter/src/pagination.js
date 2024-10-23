@@ -10,18 +10,20 @@ let countCartPets = widthSee();
 //Выполняю скрипт при изменении размера окна
 window.addEventListener('resize', function(){
     countCartPets = widthSee();
+    cloneMixidCartsItems = [];
     cloneMixidCartsItems = createCartsPagination();
     countOfItems = Math.ceil(cloneMixidCartsItems.length / countCartPets);
-    let cards = document.querySelector('.friends__cards-container');
-    cards.innerHTML = '';
-    showPageCarts(1);
+    if (currentPage > countCartPets) {
+        currentPage = countOfItems;
+    }
+    showPageCarts(currentPage);
 });
 
 function widthSee() {
     let width = window.innerWidth;
     let countCartPets = 0;
 
-    if (width >= 1280 || width <= 950) {
+    if (width >= 950) {
         countCartPets = 8;
     }
     if (width <= 949) {
