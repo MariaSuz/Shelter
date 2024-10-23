@@ -113,3 +113,4 @@ BUTTON_RIGHT.addEventListener('click', nextslider);
 BUTTON_LEFT.addEventListener('click', prevslider);
 
 createPopUp();
+

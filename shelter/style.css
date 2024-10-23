@@ -896,13 +896,21 @@ h5 {
   gap: 60px;
   width: 100%;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 1279px) {
   .slider {
     position: relative;
     gap: 12px;
   }
 }
 @media (max-width: 514px) and (min-width: 320px) {
+  .slider {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 80px;
+    max-width: 270px;
+  }
+}
+@media (max-width: 767px) {
   .slider {
     flex-wrap: wrap;
     justify-content: center;
@@ -932,6 +940,11 @@ h5 {
     max-width: 580px;
   }
 }
+@media (max-width: 767px) {
+  .slider__line {
+    order: -1;
+  }
+}
 @media (max-width: 320px) {
   .slider__line {
     max-width: 270px;
@@ -946,7 +959,7 @@ h5 {
 }
 @media screen and (max-width: 1279px) {
   .slider__container {
-    left: -620px;
+    left: -700px;
     gap: 40px;
   }
 }
@@ -962,11 +975,6 @@ h5 {
   }
 }
 
-@media screen and (max-width: 1279px) {
-  .item:first-child {
-    display: none;
-  }
-}
 @keyframes move-right {
   from {
     left: -1080px;
@@ -981,6 +989,24 @@ h5 {
   }
   to {
     left: 0px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  @keyframes move-right {
+    from {
+      left: -700px;
+    }
+    to {
+      left: -1400px;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -700px;
+    }
+    to {
+      left: 0px;
+    }
   }
 }
 @media (max-width: 768px) {
