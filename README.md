@@ -2,7 +2,7 @@
 
 Shelter – это учебный проект Stage#0 курса "JavaScript / Front-end Course" школы Rolling Scopes School (RS Schoo), в ходе выполнения которого сверстан сайт, состоящий из двух страниц.
 
-![image](https://post-images.org/photo-page.php?photo=sVS79tPE)
+![image](shelter.jpg)
 
 [Ссылка на демонтацию проекта](https://mariasuz.github.io/Shelter/shelter/index.html) 
 
