@@ -1,0 +1,228 @@
+.pets__content{
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    align-items: center;
+    gap: 60px;
+   // position: relative;
+    max-width: 1280px;
+    width: 100%;
+    @include media-mobile{
+        padding-top: 42px;
+        padding-bottom: 42px;
+        gap: 42px;
+    }
+}
+
+.pets__h3 {
+    text-align: center;
+    letter-spacing: 2.1px;
+    @include media-mobile{
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
+}
+.slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    //overflow: hidden;
+    width: 100%;
+    @include petscontant{
+         position: relative;
+         gap: 12px;
+    }
+    @include  tablet-mobile{
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 20px 80px;
+       max-width: 270px;
+    }
+    @include navigationsize{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 80px;
+        max-width: 270px;
+    }
+    @include media-mobile{
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 20px 80px;
+    }
+}
+
+.slider__line{
+    max-width: 990px;
+    overflow: hidden;
+    //max-height: 435px;
+    @extend %transition;
+    @include  petscontant{
+        max-width: 580px;
+    }
+    @include media-tablet{
+        max-width: 580px;
+    }
+    @include navigationsize{
+        order: -1;
+    }
+    @include media-mobile{
+        max-width: 270px;
+    }
+}
+
+.slider__container {
+    display: flex;
+    gap: 90px;
+    position: relative;
+    left: -1080px;
+    @include petscontant{
+        left: -700px;
+        gap: 40px;
+    }
+    @include media-tablet{
+        left: -620px;
+        gap: 40px;
+    }
+    @include media-mobile{
+        left: -310px;
+    }
+}
+
+//Анимация
+@keyframes move-right {
+    from {left: -1080px}
+    to {left: -2160px}
+}
+
+@keyframes move-left {
+    from {left: -990px}
+    to {left: 0px}
+}
+
+@include petscontant {
+    @keyframes move-right {
+        from {left: -700px}
+        to {left: -1400px}
+    }
+    
+    @keyframes move-left {
+        from {left: -700px}
+        to {left: 0px}
+    } 
+}
+@include media-tablet {
+    @keyframes move-right {
+        from {left: -620px}
+        to {left: -1240px}
+    }
+    
+    @keyframes move-left {
+        from {left: -620px}
+        to {left: 0px}
+    } 
+}
+@include media-mobile {
+    @keyframes move-right {
+        from {left: -310px}
+        to {left: -620px}
+    }
+    
+    @keyframes move-left {
+        from {left: -310px}
+        to {left: 0px}
+    } 
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 5s;
+}
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 5s;
+}
+
+.item{
+    display: flex;
+    gap: 90px;
+    @include media-tablet {
+        gap: 40px;
+    }
+}
+
+.slider__card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border-radius: 9px;
+    background-color: $background-color-pets-card;
+    width: 270px;
+    // height: 445px;
+    transition: transform .2s;
+    position: relative;
+    order: 1;
+    cursor: pointer;
+    @extend %transition;
+    &:hover {
+        background-color: #fff;
+        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+        transform: scale(0.98);
+        @extend %transition;
+        & .button_card{
+            background-color: $button-hover;
+        }
+        & .slider__card__text{
+            font-weight: 700;
+        }
+    }
+}
+
+
+.button_arrow{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $button-primary;
+    border-radius: 100px;
+    padding: 23px, 19px, 23px, 19px;
+    min-width: 52px;
+    min-height: 52px;
+    &:hover {
+        background-color: $button-hover;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      @include tablet-mobile {
+       
+      }
+}
+
+.button_arrow_left{
+    @include media-mobile {
+        order: 2;
+    }
+    @include  tablet-mobile{
+        order: 2;
+    }
+}
+
+.button_arrow_right{
+    @include media-mobile {
+        order: 2;
+    }
+    @include  tablet-mobile{
+        order: 2;
+    }
+}
+
+
+.slider__card__text{
+    @extend %font-second;
+    @include font(20px, 22.72px);
+    letter-spacing: 1px;
+}
+

@@ -1,0 +1,210 @@
+.modal {
+    display: none;
+    position: fixed;
+    left:0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(41, 41, 41, 0.6);
+    @extend %transition;
+    overflow: auto;
+}
+
+.modal-open{
+    display: block;
+}
+
+.modal__container{
+    max-width: 900px;
+    visibility: visible;
+    display: flex;
+    position: relative;
+    background-color: $background-color-pets-card;
+    border-radius: 9px;
+    top: 20%;
+    margin: auto;
+    @include pc-tablet{
+        max-width: 630px;
+    }
+    @include media-tablet{
+        max-width: 630px;
+        max-width: 630px;
+    }
+    @include navigationsize{
+        top: 10%;
+        max-width: 350px;
+    }
+    @include madals-size{
+        max-width: 240px;
+        top: 25%;
+    }
+    @include media-mobile{
+        max-width: 240px;
+    }
+
+}
+
+.modal__window {
+    display: flex;
+    justify-content: space-between;
+    @include navigationsize {
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.h3__modal{
+    @include media-tablet {
+        @include font(35px, 45.5px);
+        text-align: center;
+    }
+}
+
+.h4_modal{
+    margin-top: -30px;
+    @include pc-tablet{
+        margin-top: -10px;
+    }
+    @include media-tablet {
+        margin-top: -10px;
+    }
+    @include media-tablet {
+        text-align: center;
+    }
+    @include media-tablet {
+        @include font(20px, 23px);
+        text-align: center;
+    }
+}
+
+.modal__window__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 30px;
+    @include pc-tablet{
+        gap: 20px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 9px;
+    }
+    @include media-tablet {
+        gap: 20px;
+    }
+    @include navigationsize {
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 9px;
+        padding-bottom: 10px
+    }
+}
+
+.modal__text{
+    @extend %font-second;
+    @include font(15px, 16.5px);
+    letter-spacing: 0.06em;
+    @include pc-tablet{
+        @include font(13px, 14.3px);
+    }
+    @include media-tablet {
+        @include font(13px, 14.3px);
+    }
+    @include media-mobile {
+        @include font(13px, 14.3px);
+    }
+}
+
+.modal__window__img{
+    width: 500px;
+    height: 500px;
+    @include pc-tablet{
+        width: 350px;
+        height: 350px;
+    }
+    @include media-tablet {
+        width: 350px;
+        height: 350px;
+    }
+    @include madals-size{
+        display: none;
+    }
+}
+
+.modal__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 15px;
+    @include navigationsize {
+        gap: 0;
+    }
+    @include pc-tablet{
+        gap: 2px;
+    }
+}
+.modal__li {
+    color: $button-primary;
+}
+
+
+.modal__span {
+    @extend %font-second;
+    @include font(15px, 16.5px);
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0.06em;
+}
+
+.modal__span2 {
+    font-weight: bold
+}
+
+//Модальный крестик
+
+.modal__close-button{
+    border: 2px solid $button-primary;
+    width: 52px;
+    height: 52px;
+    border-radius: 100px;
+    position: absolute;
+    top: -52px;
+    right: -42px;
+    background: transparent;
+    &:hover {
+        background-color: $button-hover;
+    }
+    @include madals-size{
+        right: -32px;
+    }
+}
+
+// .modal__close-button:before, .modal__close-button:after {
+//     position: absolute;
+//     left: 20px;
+//     content: ' ';
+//     height: 12px;
+//     width: 12px;
+//     background-color: #333;
+//   } 
+
+//   .modal__close-button:before {
+//     transform: rotate(45deg);
+//   }
+//   .modal__close-button:after {
+//     transform: rotate(-45deg);
+//   }
+
+// .modal__close-button_span{
+//     border: solid 2px $burger-background;
+//     width: 100%;
+// }
+
+.modal__close-button_span::after{
+    display: inline-block;
+    content: "\00d7";
+    font-size: 32px;
+    font-weight: lighter;
+}
+

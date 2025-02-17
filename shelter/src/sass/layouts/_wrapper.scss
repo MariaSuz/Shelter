@@ -1,0 +1,154 @@
+.wrapper-box_header{
+    background: url('/mariasuz-JSFEPRESCHOOL2024Q2/shelter/src/img/noise_lines_transparent.png'),
+    radial-gradient(110.67% 338.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
+}
+
+.wrapper {
+    width: 100%;
+    max-width: $content-width;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-right: 40px;
+    overflow: hidden;
+    min-height: 100%;
+    @include pc-tablet {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @include media-tablet {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @include media-mobile{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @include tablet-mobile{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.header__wrapper {
+    // background-image: url('../../img/start-screen-background.jpg');
+    // background-image: 
+    // linear-gradient(150deg, rgba(91, 72, 58, 0.4), rgba(38, 36, 37, 0.1)),
+    // url('/mariasuz-JSFEPRESCHOOL2024Q2/shelter/src/img/start-screen-background.jpg');
+    max-height: 908px;
+    @include media-tablet{
+        max-height: 1165px;
+    }
+    @include pc-tablet{
+        max-height: 1165px;
+    }
+    @include media-mobile {
+        max-height: 823px;
+    }
+    @include tablet-mobile {
+        max-height: 823px;
+    }
+}
+
+.wrapper__about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    gap: 120px;
+    @include media-tablet{
+        flex-direction: column-reverse;
+        gap: 80px;
+    }
+    @include pc-tablet {
+        flex-direction: column-reverse;
+    }
+    @include media-mobile{
+        padding-top: 42px;
+        padding-bottom: 42px;
+        gap: 160px;
+    }
+}
+
+.pets__wrapper {
+    background-color:$background-color-pets;
+    @include media-mobile{
+       margin-top: -4px;
+    }
+}
+
+.help__wrapper{
+    padding-top: 80px;
+    padding-bottom: 100px;
+    @include media-mobile{
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+}
+
+.donation__wrapper{
+    padding-top: 80px;
+    padding-bottom: 97px;
+    background-color: $background-color-pets;
+    @include media-tablet {
+        padding-top: 78px;
+    }
+    @include media-mobile{
+        padding-top: 42px;
+        padding-bottom: 40px;
+    }
+}
+
+.footer__wrapper{
+    padding-top: 40px;
+    @include media-tablet{
+        padding-top: 18px;
+    }
+    @include media-mobile{
+        padding-top: 18px;
+    }
+}
+
+
+///Здесь фон на весь экран
+///
+.about{
+    background-color: $text-grey;
+}
+
+.pets{
+    background-color: $background-color-pets;
+}
+
+.help{
+    background-color: $text-grey;
+}
+
+.donation{
+    background-color: $background-color-pets;
+}
+
+.footer{
+    background: url('/mariasuz-JSFEPRESCHOOL2024Q2/shelter/src/img/noise_lines_transparent.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+}
+
+//Вторая страничка
+
+.friends {
+    background-color: $background-color-pets;
+}
+
+
+.friends__wrapper{
+    padding-top: 80px;
+    padding-bottom: 100px;
+    @include media-tablet{
+        padding-bottom: 78px;
+    }
+    @include media-mobile{
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+}
+

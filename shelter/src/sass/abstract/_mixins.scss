@@ -1,0 +1,51 @@
+@mixin media-tablet {
+    @media (max-width: $tablet-width) { @content; }
+}
+
+@mixin media-mobile {
+    @media (max-width: $mobile-width) { @content; }
+}
+
+@mixin font ($size, $line-height, $weight: 400) {
+    font-size: $size;
+    line-height: $line-height;
+    font-weight: $weight;
+}
+
+
+@mixin pc-tablet {
+    @media (max-width: 1124px) and (min-width: 768px) { @content; }
+}
+
+@mixin slider1212 {
+    @media (max-width: 1212px) { @content; }
+}
+
+@mixin donationsize {
+    @media (max-width: 906px) { @content; }
+}
+
+@mixin tablet-mobile {
+    @media (max-width: 514px) and (min-width: 320px) { @content; }
+}
+
+@mixin navigationsize {
+    @media (max-width: 767px){ @content; }
+}
+
+
+@mixin navigationsize {
+    @media (max-width: 767px){ @content; }
+}
+
+@mixin madals-size {
+    @media (max-width: 440px){ @content; }
+}
+
+@mixin petscontant {
+    @media screen and (max-width: 1279px){ @content; }
+}
+
+@mixin petscontant2 {
+    @media (max-width: 875px){ @content; }
+}

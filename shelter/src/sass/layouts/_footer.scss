@@ -1,0 +1,122 @@
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 65px 60px;
+    @include pc-tablet {
+        justify-content: center;
+    }
+    @include media-tablet{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 60px 60px;
+    }
+    @include tablet-mobile{
+        align-items: center;
+        gap: 28px 10px;
+        text-align: center;
+    }
+    @include media-mobile{
+        align-items: center;
+        gap: 28px 10px;
+    }
+    
+}
+
+.footer_link{
+    text-decoration: none;
+    color:$button-primary;
+    @extend %font-second;
+    @include font(20px, 23px);
+    letter-spacing: 0.06em;
+    &_telephone{
+        padding-top: 5px;
+        padding-left: 5px;
+    }
+}
+
+.footer__contacts__container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 44px;
+    @include media-tablet{
+        gap: 41px;
+    }
+}
+
+.footer__location__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 35px;
+    @include media-tablet{
+        gap: 33px;
+    }
+}
+
+.footer__location__container_second{
+    @include media-mobile{
+        gap: 40px;
+    }
+}
+
+.footer__contacts{
+ display: flex;
+ gap: 20px;
+  @include media-mobile{
+    padding-left: 20px;
+    gap: 20px;
+  }
+}
+
+.footer__location{
+    display: flex;
+    gap: 20px;
+    @include media-mobile{
+        gap: 18px;
+        text-align: center;
+      }
+
+}
+
+.footer__contacts_h3{
+    color:$text-grey;
+    @include media-mobile {
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
+}
+
+
+.footer__contacts_h3_br{
+    @include media-mobile{
+        display: none;
+    }
+}
+
+.footer__contacts_h3_br_small{
+    display: none;
+    @include media-mobile {
+        display: block;
+    }
+}
+
+.footer__img{
+    @include media-tablet{
+        max-width: 320px;
+        padding-top: 10px;
+    }
+    @include pc-tablet{
+        max-width: 320px;
+        padding-top: 10px;
+    }
+    @include tablet-mobile {
+        max-width: 260px;
+        padding-top: 10px;
+    }
+    @include media-mobile{
+        max-width: 260px;
+        padding-top: 10px;
+    }
+}

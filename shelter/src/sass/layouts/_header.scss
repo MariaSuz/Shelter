@@ -1,0 +1,212 @@
+.header {
+    width: 100%;
+    color: $text-light;
+}
+
+.header__logo-navigation {
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-between;
+    position: relative;
+    @include navigationsize{
+        align-items: center;
+        gap: 66px;
+    }
+    @include media-mobile{
+        text-align: center;
+        justify-content: center;
+        gap: 66px;
+    }
+
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include media-mobile{
+        margin-left: -90px;
+    }
+}
+
+.logo_a {
+    text-decoration: none;
+    &:hover {
+        color: $button-hover;;
+    }
+}
+
+.logo__title_pets{
+    color:$text-dark-second;
+}
+
+.menu{
+    @include navigationsize {
+        background-color: $burger-background;
+        width: 320px;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        z-index: 20;
+        transition: all 0.3s ease;
+        opacity: 1;
+        position: fixed;
+        overflow: auto;
+    }
+}
+
+.menu.open {
+    right: 0;
+    position: fixed;
+}
+
+.navigation-menu{
+    @include navigationsize {
+        padding-top: 248px;
+    }
+}
+
+.navigation {
+    display: flex;
+    gap: 36px;
+    padding-top: 15px;
+    @include navigationsize {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+// бургер меню!
+
+.burger-button{
+    display: none;
+    @include navigationsize {
+        display: block;
+        display: inline-block;
+        position: absolute;
+        width: 30px;
+        height: 22px;
+        transition: all 0.3s ease;
+        background: none;
+        border:0;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        z-index: 30;
+        top: 3.0625rem;
+        right: 1rem;
+        cursor: pointer;
+        &_active{
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.burger-line{
+    border: solid 1px $button-primary;
+    width: 100%;
+}
+
+// бургер меню!
+
+.logo__text{
+    font-family: 'Arial', Helvetica, sans-serif;
+    @include font(13px, 14.95px);
+    color: $text-grey;
+    letter-spacing: 1.5px;
+    &_pets {
+        color:$text-dark-second;
+    }
+}
+
+.navigation__link{
+    list-style: none;
+}
+
+.navigation__link_a{
+    color: $text-light;
+    @include font(15px, 24px);
+    text-decoration: none;
+    transition: all 0.1s linear;
+    padding-bottom: 3px;
+    &:hover {
+        border-bottom: 3px solid $button-primary;
+    }
+}
+
+.navigation__link_pets {
+    color:$text-dark-second;
+}
+
+.activ-class-a{
+    border-bottom: 3px solid $button-primary;
+    bottom: 10px;
+}
+
+// Вторая часть
+.start-screen{
+    display: flex;
+    padding-top: 90px;
+    align-items: center;
+    justify-content: space-between;
+    @include media-tablet{
+        flex-direction: column;
+        gap: 100px 70px;
+        padding-top: 140px;
+    }
+    @include pc-tablet{
+        flex-direction: column;
+        gap: 100px 70px;
+        padding-top: 140px;
+    }
+    @include media-mobile {
+        gap: 105px 30px;
+    }
+    
+}
+
+.start-screen__content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: -80px;
+    @include media-mobile {
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+.start-screen__title{
+    @include media-mobile{
+        text-align: center;
+    }
+}
+
+.start-screen__text{
+    max-width: 460px;
+    @include media-mobile{
+        text-align: center;
+    }
+}
+
+
+.img-start-screen{
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-end;
+    @include pc-tablet {
+        max-height: 593px;
+    }
+    @include media-tablet{
+        max-height: 593px;
+        left: 70px;
+    }
+    @include tablet-mobile {
+        left: 20px;
+        max-height: 271px;
+    }
+    
+}
+

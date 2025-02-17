@@ -1,0 +1,97 @@
+.donation__container{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    @include donationsize{
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+    @include media-tablet{
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+    @include media-mobile {
+        gap: 42px;
+    }
+}
+
+.donation__dog-img{
+    @include tablet-mobile{
+        max-width: 260px;
+     }
+}
+
+.donation__contant{
+    max-width: 380px;
+    max-height: 282px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include media-mobile{
+        text-align: center;
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+}
+
+.donation__contant__name_bank{
+    letter-spacing: 0.06em;
+    @extend %font-second;
+    @include font(15px, 16.5px);
+    @include media-mobile{
+        @include font(15px, 24px);
+        letter-spacing: normal;
+    }
+}
+
+.donation__contant__text{
+    font-style: italic;
+    @include font(12px, 18px);
+    color: rgba(178, 178, 178, 1);
+    @include media-mobile {
+        text-align: justify;
+    }
+}
+
+.credit-card__container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.credit-card{
+    background-color: $button-primary;
+    padding: 10px 15px 10px 15px;
+    width: 320px;
+    height: 43px;
+    border-radius: 9px;
+    display: flex;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: $button-hover;
+        cursor: pointer;
+      }
+      @include tablet-mobile{
+        width: 281px;
+      }
+      @include media-mobile {
+        width: 251px;
+      }
+  
+}
+
+.credit-card_number{
+    text-decoration: none;
+    @extend %font-second;
+    @include font(20px, 23px);
+    letter-spacing: 0.06em;
+    color: rgba(84, 84, 84, 1);
+    @include tablet-mobile{
+        @include font(15px, 16.5px);
+     }
+     @include media-mobile {
+        @include font(15px, 16.5px);
+     }
+}
+
